@@ -1,16 +1,18 @@
 package interaction;
+import character.Character;
+import character.CharacterFactory;
 
 public class SimpleTestClass {
 
 	public static void main (String args []){
-		
-		
+		//CharacterFactory Factory
+		CharacterFactory cf = new CharacterFactory();
 		
 		//Keyboard Invoker
 		Keyboard_input keyboard = new Keyboard_input();
 		
 		//PLAYER Receiver
-		Player player = new Player("Player");
+		Character player = cf.makeCharacter("P");
 		
 		//MOVE_LEFT Concrete command
 		button_A left = new button_A(player);

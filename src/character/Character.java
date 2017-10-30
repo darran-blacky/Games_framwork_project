@@ -22,5 +22,12 @@ public abstract class Character{
 	public void displayCharacter(){
 		System.out.println(getName() + " is on the screen");
 	}
+	
+	public void move_up()		{ 	System.out.println(name + " moved up."); 			}
+	public void move_down()		{ 	System.out.println(name + " moved down."); 		}
+	public void move_left()		{ 	System.out.println(name + " moved left."); 		}
+	public void move_right()	{ 	System.out.println(name + " moved right."); 		}
+	public void shoot()			{ 	System.out.println(name + " shot their weapon."); 	}
+
 }
 	

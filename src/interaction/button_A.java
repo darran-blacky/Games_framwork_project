@@ -1,10 +1,10 @@
 package interaction;
-
+import character.Character;
 public class button_A implements Command {
 
-	Player player;
+	Character player;
 	
-	public button_A(Player player){
+	public button_A(Character player){
 		this.player = player;
 	}
 	
