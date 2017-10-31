@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.Random;
 
-public class Enemy extends AbstractEntity{
+public class Enemy extends Character{
 	private static final int WIDTH = 64, HEIGHT = 64;
 	private static Random random = new Random();
 	private int velX, velY;
