@@ -1,82 +1,76 @@
 package character;
-import java.awt.Image;
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
-import javax.swing.ImageIcon;
-public class Player extends Character{
-	//rivate int dx;
-   //private int dy;
-   // private int x;
-    //private int y;
-    //private Image image;
-	public Player(){
-		setName("Player Character");
-		setHealth(100);
-		//init();
+
+import hud.Screen;
+public class Player extends AbstractEntity{
+
+	private static final int WIDTH = 64, HEIGHT = 64;
+	private static final String _name = "";
+	private int health = 100, stamina = 100;
+
+	//button_A left = new button_A(player);
+	
+	public Player(int x, int y){ 
+		super(x,y);
 	}
-	//initialise player object
-	/*public void init(){
-		ImageIcon ii = new ImageIcon("craft.png");
-        image = ii.getImage();
-        x = 40;
-        y = 60;
-    }
-	*
-	public void move() {
-        x += dx;
-        y += dy;
-    }
+	
+	public void update(Screen screen) {
+	if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_A))
+			setX(getX() - 2);
+	if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_D))
+			setX(getX() + 2);
+	if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_W))
+			setY(getY() - 2);
+	if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_S))
+			setY(getY() + 2);
+	/*
+	if(y >= 600 - 64)
+		y = 600 - 64;
+	if(y <= 0)
+		y=0;
+	if(x >= 800 -64)
+		x = 800 - 64;
+	if(x <= 0)
+		x = 0;*/
+	}
+	
+	public void draw(Graphics2D g2d) {
+		 g2d.setColor(Color.BLACK);
+		 g2d.fillRect(getX(), getY(), WIDTH, HEIGHT);
+		 g2d.drawString("HEALTH:", 10, 20);
+		 g2d.drawString("STAMINA:", 10,40);
+		 g2d.drawString(String.valueOf(getHealth()),65, 20);
+		 g2d.drawString(String.valueOf(getStamina()),65, 40);
+	}
+	
+	
 
-    public int getX() {
-        return x;
-    }
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
 
-    public int getY() {
-        return y;
-    }
+	public int getHealth() {
+		return health;
+	}
 
-    public Image getImage() {
-        return image;
-    }
+	public void setHealth(int health) {
+		this.health = health;
+	}
 
-    public void keyPressed(KeyEvent e) {
+	public int getStamina() {
+		return stamina;
+	}
 
-        int key = e.getKeyCode();
+	public void setStamina(int stamina) {
+		this.stamina = stamina;
+	}
 
-        if (key == KeyEvent.VK_LEFT) {
-            dx = -1;
-        }
+	public static String getName() {
+		return _name;
+	}
 
-        if (key == KeyEvent.VK_RIGHT) {
-            dx = 1;
-        }
-
-        if (key == KeyEvent.VK_UP) {
-            dy = -1;
-        }
-
-        if (key == KeyEvent.VK_DOWN) {
-            dy = 1;
-        }
-    }
-
-    public void keyReleased(KeyEvent e) {
-        
-        int key = e.getKeyCode();
-
-        if (key == KeyEvent.VK_LEFT) {
-            dx = 0;
-        }
-
-        if (key == KeyEvent.VK_RIGHT) {
-            dx = 0;
-        }
-
-        if (key == KeyEvent.VK_UP) {
-            dy = 0;
-        }
-
-        if (key == KeyEvent.VK_DOWN) {
-            dy = 0;
-        }
-    }*/
 }
