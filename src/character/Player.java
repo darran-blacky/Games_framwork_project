@@ -49,8 +49,6 @@ public class Player extends Character{
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	public int getHealth() {

@@ -1,7 +1,8 @@
 package hud;
-
-import hud.Game;
-
+/*
+ * This handles the screens
+ * for updating and drawing
+ */
 public class ScreenFactory {
 	private final Game game;
 	private Screen screen;

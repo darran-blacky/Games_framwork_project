@@ -11,15 +11,15 @@ public class NPC extends Character{
 	
 	public NPC(int x, int y) {
 		super(x, y);
-		velX = random.nextInt(10) - 6;
-		velY = random.nextInt(10) - 6;
+		velX = random.nextInt(4) - 1;
+		velY = random.nextInt(4) - 1;
 	}
-
+	@Override
 	public void update() {
 		setX(getX() - velX);
 		setY(getY() - velY);
 	}
-	
+	@Override
 	public void draw(Graphics2D g2d) {
 		 g2d.setColor(Color.RED);
 		 g2d.fillRect(getX(), getY(), WIDTH, HEIGHT);

@@ -1,7 +1,10 @@
 package hud;
 
 import java.awt.Graphics2D;
-
+/*
+ * implement to draw to the screen
+ * abstract so different objects can extend it e.g characters
+ */
 public abstract class Screen {
 	private final ScreenFactory screenFactory;
 	public Screen(ScreenFactory screenFactory) {

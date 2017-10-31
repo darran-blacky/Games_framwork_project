@@ -7,16 +7,20 @@ import java.awt.RenderingHints;
 import javax.swing.JPanel;
 
 import hud.Game;
-
+/*
+ * updating and drawing everything
+ * extend JPanel to add to the window
+ */
 public class GameThread  extends JPanel implements Runnable {
-	private final Game game;
+	private final Game game; 
 	private static final long serialVersionUID = 1L;
 	public GameThread(Game game) {
 		this.game = game;
-		setFocusable(true);//keyboard Input
+		setFocusable(true);//allows JPanel to get keyboard Input
 	}
 	@Override
 	public void run() {
+		//update game
 		while(true) {
 			try {
 				if(game.getScreenFactory().getCurrentScreen() != null)
@@ -28,9 +32,14 @@ public class GameThread  extends JPanel implements Runnable {
 		}
 		
 	}
+	
+	/*
+	 * 
+	 */
 	public void paint(Graphics g) {
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
+		//to stop lag
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		if(game.getScreenFactory().getCurrentScreen() != null)
 			game.getScreenFactory().getCurrentScreen().onDraw(g2d);
