@@ -18,7 +18,9 @@ public class NPC extends Character{
 	public void update() {
 		setX(getX() - velX);
 		setY(getY() - velY);
+		
 	}
+
 	@Override
 	public void draw(Graphics2D g2d) {
 		 g2d.setColor(Color.RED);

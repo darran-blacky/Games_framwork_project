@@ -1,16 +1,17 @@
 package character;
 
-import java.awt.event.KeyEvent;
 
-import hud.Screen;
+
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+
 
 public class Player extends Character{
 
-	
+	private static final int WIDTH = 64, HEIGHT = 64;
 	private static final String _name = "";
 	private int health = 100, stamina = 100;
-
-	//button_A left = new button_A(player);
 	
 	public Player(int x, int y){ 
 		super(x,y);
@@ -18,38 +19,11 @@ public class Player extends Character{
 	
 	
 	
-	/*public void draw(Graphics2D g2d) {
+	public void draw(Graphics2D g2d) {
 		 g2d.setColor(Color.BLACK);
 		 g2d.fillRect(getX(), getY(), WIDTH, HEIGHT);
-		 g2d.drawString("HEALTH:", 10, 20);
-		 g2d.drawString("STAMINA:", 10,40);
-		 g2d.drawString(String.valueOf(getHealth()),65, 20);
-		 g2d.drawString(String.valueOf(getStamina()),65, 40);
-	}*/
-	
-	public void update(Screen screen) {
-		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_A))
-				setX(getX() - 2);
-		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_D))
-				setX(getX() + 2);
-		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_W))
-				setY(getY() - 2);
-		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_S))
-				setY(getY() + 2);
-		/*
-		if(y >= 600 - 64)
-			y = 600 - 64;
-		if(y <= 0)
-			y=0;
-		if(x >= 800 -64)
-			x = 800 - 64;
-		if(x <= 0)
-			x = 0;*/
-		}
-
-	@Override
-	public void update() {
 	}
+
 
 	public int getHealth() {
 		return health;
@@ -69,6 +43,14 @@ public class Player extends Character{
 
 	public static String getName() {
 		return _name;
+	}
+
+
+
+	@Override
+	public Rectangle getBounds(int x, int y) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
