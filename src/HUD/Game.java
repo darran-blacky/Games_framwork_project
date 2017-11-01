@@ -15,7 +15,7 @@ public class Game {
 	public Game(int x, int y, String title) {
 		//creating window
 		window.setSize(x,y);
-		window.setResizable(false);
+		window.setResizable(true);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setFocusable(true); //allow for keyboard input
 		window.setLocationRelativeTo(null); //center the frame

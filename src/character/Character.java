@@ -12,6 +12,7 @@ public abstract class Character implements IEntity {
 	private int velX, velY;
 	protected int x;
 	protected int y;
+	private String name = "CHARACTER "; // this is just hard coded temporarily for the move methods below with will interact with command pattern
 	public Character(int x, int y) {
 		this.x = x;
 		this.y = y;
@@ -57,6 +58,12 @@ public abstract class Character implements IEntity {
 		
 		
 	}
+	
+	public void move_up()		{ 	System.out.println(name + " moved up."); 			}
+	public void move_down()		{ 	System.out.println(name + " moved down."); 		}
+	public void move_left()		{ 	System.out.println(name + " moved left."); 		}
+	public void move_right()	{ 	System.out.println(name + " moved right."); 		}
+	public void shoot()			{ 	System.out.println(name + " shot their weapon."); 	}
 	
 	@Override
 	public void draw(Graphics2D g2d) {
