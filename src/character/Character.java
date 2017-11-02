@@ -12,8 +12,9 @@ public abstract class Character implements IEntity {
 	private int velX, velY;
 	protected int x;
 	protected int y;
-	private String name = "CHARACTER "; // this is just hard coded temporarily for the move methods below with will interact with command pattern
-	public Character(int x, int y) {
+	private String name; // this is just hard coded temporarily for the move methods below with will interact with command pattern
+	public Character(int x, int y, String name) {
+		this.name = name;
 		this.x = x;
 		this.y = y;
 	}
@@ -33,23 +34,22 @@ public abstract class Character implements IEntity {
 	
 	
 	public void update(Screen screen) {
-		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_A))
-				setX(getX() - 2);
-		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_D))
-				setX(getX() + 2);
-		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_W))
-				setY(getY() - 2);
-		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_S))
-				setY(getY() + 2);
-		/*
-		if(y >= 600 - 64)
-			y = 600 - 64;
-		if(y <= 0)
-			y=0;
-		if(x >= 800 -64)
-			x = 800 - 64;
-		if(x <= 0)
-			x = 0;*/
+		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_A)){
+			screen.getScreenFactory().getGame().handleInput("A",this);
+		}
+		
+		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_D)){
+			screen.getScreenFactory().getGame().handleInput("D",this);	
+		}
+		
+		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_W)){
+			screen.getScreenFactory().getGame().handleInput("W",this);
+		}
+				
+		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_S)){
+			screen.getScreenFactory().getGame().handleInput("S",this);
+		}
+	
 		}
 	@Override
 	public void update() {
@@ -58,11 +58,11 @@ public abstract class Character implements IEntity {
 		
 		
 	}
-	
-	public void move_up()		{ 	System.out.println(name + " moved up."); 			}
-	public void move_down()		{ 	System.out.println(name + " moved down."); 		}
-	public void move_left()		{ 	System.out.println(name + " moved left."); 		}
-	public void move_right()	{ 	System.out.println(name + " moved right."); 		}
+	//Methods for the character to move
+	public void move_up()		{ 	setY(getY() - 2); System.out.println(name + " moved up."); 			}
+	public void move_down()		{ 	setY(getY() + 2); System.out.println(name + " moved down."); 		}
+	public void move_left()		{ 	setX(getX() - 2); System.out.println(name + " moved left."); 		}
+	public void move_right()	{ 	setX(getX() + 2); System.out.println(name + " moved right."); 		}
 	public void shoot()			{ 	System.out.println(name + " shot their weapon."); 	}
 	
 	@Override

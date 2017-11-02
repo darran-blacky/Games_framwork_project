@@ -9,8 +9,8 @@ public class NPC extends Character{
 	private static Random random = new Random();
 	private int velX, velY;
 	
-	public NPC(int x, int y) {
-		super(x, y);
+	public NPC(int x, int y, String name) {
+		super(x, y,name);
 		velX = random.nextInt(4) - 1;
 		velY = random.nextInt(4) - 1;
 	}

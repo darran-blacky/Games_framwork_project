@@ -10,11 +10,11 @@ import java.awt.Rectangle;
 public class Player extends Character{
 
 	private static final int WIDTH = 64, HEIGHT = 64;
-	private static final String _name = "";
+	private static final String _name = "PLAYER_ ";
 	private int health = 100, stamina = 100;
 	
-	public Player(int x, int y){ 
-		super(x,y);
+	public Player(int x, int y, String name){ 
+		super(x,y,name);
 	}
 	
 	

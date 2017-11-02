@@ -9,8 +9,8 @@ public class Enemy extends Character{
 	private static Random random = new Random();
 	private int velX, velY;
 	
-	public Enemy(int x, int y) {
-		super(x, y);
+	public Enemy(int x, int y, String name) {
+		super(x, y, name);
 		velX = random.nextInt(5) - 4;
 		velY = random.nextInt(5) - 4;
 	}
