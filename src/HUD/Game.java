@@ -2,7 +2,7 @@ package hud;
 
 import javax.swing.JFrame;
 
-import gameFramework.keyboardListener;
+import interaction.keyboardListener;
 import interaction.Keyboard_input;
 import interaction.*;
 import character.Character;

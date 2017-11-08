@@ -5,7 +5,7 @@ public class button_S implements Command {
 
 	Character player;
 	
-	button_S(Character player){
+	public button_S(Character player){
 		this.player = player;
 	}
 	

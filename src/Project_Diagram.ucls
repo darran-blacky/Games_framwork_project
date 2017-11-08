@@ -3,17 +3,17 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <package id="1" language="java" name="character" project="CS4227_Project" file="/CS4227_Project/src/character" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="487" width="335" x="4" y="-1"/>    
+    <position height="552" width="501" x="4" y="14"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <package id="2" language="java" name="interaction" project="CS4227_Project" file="/CS4227_Project/src/interaction" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="366" width="432" x="339" y="9"/>    
+    <position height="474" width="605" x="522" y="10"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="3" language="java" name="character.Character" project="CS4227_Project" 
     file="/CS4227_Project/src/character/Character.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="63" width="121" x="23" y="119"/>    
+    <position height="114" width="126" x="305" y="158"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -22,7 +22,7 @@
   </class>  
   <class id="4" language="java" name="character.CharacterFactory" project="CS4227_Project" 
     file="/CS4227_Project/src/character/CharacterFactory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="63" width="155" x="167" y="119"/>    
+    <position height="63" width="155" x="304" y="68"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -31,7 +31,7 @@
   </class>  
   <class id="5" language="java" name="character.Enemy" project="CS4227_Project" 
     file="/CS4227_Project/src/character/Enemy.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="283" y="294"/>    
+    <position height="-1" width="-1" x="352" y="426"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -40,8 +40,8 @@
   </class>  
   <class id="6" language="java" name="character.NPC" project="CS4227_Project" 
     file="/CS4227_Project/src/character/NPC.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="165" y="282"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="152" width="152" x="19" y="37"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -49,7 +49,7 @@
   </class>  
   <class id="7" language="java" name="character.Player" project="CS4227_Project" 
     file="/CS4227_Project/src/character/Player.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="59" y="290"/>    
+    <position height="-1" width="-1" x="125" y="362"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -58,7 +58,7 @@
   </class>  
   <interface id="8" language="java" name="interaction.Command" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/Command.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="706" y="85"/>    
+    <position height="-1" width="-1" x="912" y="90"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -67,7 +67,7 @@
   </interface>  
   <class id="9" language="java" name="interaction.Keyboard_input" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/Keyboard_input.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="119" width="162" x="340" y="34"/>    
+    <position height="119" width="162" x="530" y="33"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -76,7 +76,7 @@
   </class>  
   <class id="10" language="java" name="interaction.button_W" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/button_W.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="74" width="117" x="349" y="180"/>    
+    <position height="74" width="117" x="709" y="160"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -85,7 +85,7 @@
   </class>  
   <class id="11" language="java" name="interaction.button_shoot" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/button_shoot.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="77" width="131" x="336" y="289"/>    
+    <position height="77" width="131" x="756" y="262"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -94,7 +94,7 @@
   </class>  
   <class id="12" language="java" name="interaction.button_S" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/button_S.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="78" width="110" x="444" y="294"/>    
+    <position height="78" width="110" x="853" y="361"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -103,7 +103,7 @@
   </class>  
   <class id="13" language="java" name="interaction.button_D" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/button_D.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="75" width="122" x="663" y="294"/>    
+    <position height="75" width="122" x="991" y="162"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -112,7 +112,7 @@
   </class>  
   <class id="14" language="java" name="interaction.button_A" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/button_A.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="80" width="112" x="552" y="293"/>    
+    <position height="80" width="112" x="933" y="261"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -121,27 +121,31 @@
   </class>  
   <class id="15" language="java" name="interaction.SimpleTestClass" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/SimpleTestClass.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="568" y="466"/>    
+    <position height="-1" width="-1" x="627" y="302"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="16">    
+  <realization id="16">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <association id="17">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="17" name="command"/>      
-      <multiplicity id="18" minimum="0" maximum="1"/>    
+      <attribute id="18" name="command">        
+        <position height="0" width="0" x="206" y="5"/>      
+      </attribute>      
+      <multiplicity id="19" minimum="0" maximum="1">        
+        <position height="0" width="0" x="206" y="5"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="19">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="8"/>  
-  </realization>  
   <realization id="20">    
-    <end type="SOURCE" refId="10"/>    
+    <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="8"/>  
   </realization>  
   <realization id="21">    
@@ -149,11 +153,11 @@
     <end type="TARGET" refId="8"/>  
   </realization>  
   <realization id="22">    
-    <end type="SOURCE" refId="13"/>    
+    <end type="SOURCE" refId="14"/>    
     <end type="TARGET" refId="8"/>  
   </realization>  
   <realization id="23">    
-    <end type="SOURCE" refId="14"/>    
+    <end type="SOURCE" refId="13"/>    
     <end type="TARGET" refId="8"/>  
   </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

@@ -6,6 +6,9 @@ package hud;
 public class ScreenFactory {
 	private final Game game;
 	private Screen screen;
+	
+	
+	
 	public ScreenFactory(Game game) {
 		this.game = game;
 	}

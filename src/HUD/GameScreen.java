@@ -5,6 +5,8 @@ import java.awt.event.KeyEvent;
 
 import character.Character;
 import character.CharacterFactory;
+import character.Circle;
+import character.Square;
 
 
 public class GameScreen extends Screen{
@@ -16,7 +18,7 @@ public class GameScreen extends Screen{
 	private CharacterFactory character = new CharacterFactory();
 	private Character player;
 	private Character enemy;
-	private Character npc;
+	private Character npc,n9,n8,n7;
 
 	
 	public GameScreen(ScreenFactory screenFactory) {
@@ -25,9 +27,17 @@ public class GameScreen extends Screen{
 
 	@Override
 	public void onCreate() {
-			player = character.makeCharacter("p");
-			enemy = character.makeCharacter("e");
-			npc= character.makeCharacter("n");
+			player = character.makeCharacter("p", new Square());
+			enemy = character.makeCharacter("e", new Circle());
+			npc= character.makeCharacter("n" , new Square());
+			//player.setY(100);
+//			n9= character.makeCharacter("p", new Square());
+//			n8= character.makeCharacter("p" , new Square());
+//			n8.setY(100);
+//			n8.setX(100);
+//			player.setX(400);
+//			player.setY(400);
+//			n7= character.makeCharacter("n", new Square());
 			//enemy = new Enemy(200,100);
 			//player = new Player(400,300);
 			//npc = new NPC(500, 500);
@@ -52,6 +62,10 @@ public class GameScreen extends Screen{
 		npc.draw(g2d);
 		headud.draw(g2d);
 		
+	}
+	
+	public Character getCharacter(){
+		return this.player;
 	}
 
 }
