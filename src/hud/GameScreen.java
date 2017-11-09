@@ -14,11 +14,11 @@ public class GameScreen extends Screen{
 	//private Enemy enemy;
 	//private Player player;
 	//private NPC npc;
-	private HeadUD headud;
+	//private HeadUD headud;
 	private CharacterFactory character = new CharacterFactory();
 	private Character player;
 	private Character enemy;
-	private Character npc,n9,n8,n7;
+	private Character npc;//,n9,n8,n7;
 
 	
 	public GameScreen(ScreenFactory screenFactory) {
@@ -41,7 +41,7 @@ public class GameScreen extends Screen{
 			//enemy = new Enemy(200,100);
 			//player = new Player(400,300);
 			//npc = new NPC(500, 500);
-			headud = new HeadUD();
+			//headud = new HeadUD();
 		
 	}
 
@@ -51,7 +51,7 @@ public class GameScreen extends Screen{
 		enemy.update();
 		npc.update();
 		if(getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_ESCAPE)) {
-			getScreenFactory().createScreen(new PauseScreen(getScreenFactory()));
+			getScreenFactory().createScreen("p");
 		}
 	}
 
@@ -60,7 +60,7 @@ public class GameScreen extends Screen{
 		player.draw(g2d);
 		enemy.draw(g2d);
 		npc.draw(g2d);
-		headud.draw(g2d);
+//		/headud.draw(g2d);
 		
 	}
 	

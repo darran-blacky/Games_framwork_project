@@ -1,11 +1,14 @@
 package hud;
 
-import javax.swing.JFrame;
 
-import interaction.keyboardListener;
-import interaction.Keyboard_input;
-import interaction.*;
+import javax.swing.JFrame;
 import character.Character;
+import interaction.Keyboard_input;
+import interaction.button_A;
+import interaction.button_D;
+import interaction.button_S;
+import interaction.button_W;
+import interaction.keyboardListener;
 /*
  * starts game engine 
  * 
@@ -34,9 +37,10 @@ public class Game {
 		window.setResizable(true);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setFocusable(true); //allow for keyboard input
-		window.setLocationRelativeTo(null); //center the frame
+	    window.setLocationRelativeTo(null); //center the frame
 		window.setTitle(title);
 		window.setVisible(true);
+		
 		
 		screenFactory = new ScreenFactory(this);
 		
@@ -46,7 +50,10 @@ public class Game {
 		window.add(gameThread);
 		window.addKeyListener(keyListener);
 		
+		
+		
 		new Thread(gameThread).start();
+		
 		
 	}
 	

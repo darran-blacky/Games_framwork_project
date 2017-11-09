@@ -1,6 +1,4 @@
 package character;
-
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
@@ -13,7 +11,7 @@ public abstract class Character {
 	DrawingAPI draw_api;
 	
 	
-	private static final int WIDTH = 64, HEIGHT = 64;
+	//private static final int WIDTH = 64, HEIGHT = 64;
 	private int velX, velY;
 	protected int x;
 	protected int y;

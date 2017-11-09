@@ -41,8 +41,13 @@ public class GameThread  extends JPanel implements Runnable {
 		Graphics2D g2d = (Graphics2D) g;
 		//to stop lag
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		try {
 		if(game.getScreenFactory().getCurrentScreen() != null)
 			game.getScreenFactory().getCurrentScreen().onDraw(g2d);
+		
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 		repaint();
 	}
 }

@@ -2,9 +2,11 @@ package hud;
 
 public class GameTest {
 	private Game game;
+	private Screen screen;
 	public GameTest() {
 		setGame(new Game(800, 600, "CS4227"));
-		game.getScreenFactory().createScreen(new GameScreen(game.getScreenFactory()));
+		screen = game.getScreenFactory().createScreen("m");
+		screen.onCreate();
 	}
 	
 	public static void main(String [] args) {
