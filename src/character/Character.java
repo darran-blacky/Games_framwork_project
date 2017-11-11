@@ -15,12 +15,19 @@ public abstract class Character {
 	private int velX, velY;
 	protected int x;
 	protected int y;
+	private State state;
+	private State default_State = new WalkingState();
 	private String name; // this is just hard coded temporarily for the move methods below with will interact with command pattern
+
+
+	private int speed;
 	public Character(int x, int y, String name, DrawingAPI draw_api) {
 		this.name = name;
 		this.x = x;
 		this.y = y;
 		this.draw_api = draw_api;
+		this.state = default_State;
+		this.state.doAction(this);
 	}
 	public String getName(){
 		return this.name ;
@@ -54,8 +61,18 @@ public abstract class Character {
 				
 		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_S)){
 			screen.getScreenFactory().getGame().handleInput("S",this);
+			
 		}
-	
+		if(screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_SHIFT) &&
+				(!(screen.getScreenFactory().getGame().getKeyListener().isKeyReleased(KeyEvent.VK_SHIFT)))){
+			this.state = new SprintingState();
+			this.state.doAction(this);
+		
+			
+		}
+		else
+			this.state = default_State;
+		    this.state.doAction(this);
 		}
 	
 	public void update() {
@@ -65,10 +82,10 @@ public abstract class Character {
 		
 	}
 	//Methods for the character to move
-	public void move_up()		{ 	setY(getY() - 2); System.out.println(name + " moved up."); 			}
-	public void move_down()		{ 	setY(getY() + 2); System.out.println(name + " moved down."); 		}
-	public void move_left()		{ 	setX(getX() - 2); System.out.println(name + " moved left."); 		}
-	public void move_right()	{ 	setX(getX() + 2); System.out.println(name + " moved right."); 		}
+	public void move_up()		{ 	setY(getY() - speed); System.out.println(name + " moved up."); 			}
+	public void move_down()		{ 	setY(getY() + speed); System.out.println(name + " moved down."); 		}
+	public void move_left()		{ 	setX(getX() - speed); System.out.println(name + " moved left."); 		}
+	public void move_right()	{ 	setX(getX() + speed); System.out.println(name + " moved right."); 		}
 	public void shoot()			{ 	System.out.println(name + " shot their weapon."); 	}
 	
 	
@@ -77,5 +94,12 @@ public abstract class Character {
 	public Rectangle getBounds(int width, int height) {
 		return new Rectangle((int)x, (int)y, width, height);
 		
+	}
+	public void setState(State state) {
+		this.state = state;
+		
+	}
+	public void setSpeed(int speed) {
+		this.speed = speed;
 	}
 }

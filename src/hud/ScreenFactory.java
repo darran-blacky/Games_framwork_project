@@ -11,7 +11,7 @@ public class ScreenFactory {
 	private static ScreenFactory screenFactory;
 	private Map<String, Screen> screenPool;
 	
-	private static Game game;
+	private Game game;
 	private Screen screen;
 	
 	public ScreenFactory(Game game) {
@@ -20,7 +20,7 @@ public class ScreenFactory {
 	}
 	
 	
-	public static ScreenFactory getInstance() {
+	public ScreenFactory getInstance() {
 		if (screenFactory == null) {
 			screenFactory = new ScreenFactory(game);
 		}
@@ -49,7 +49,7 @@ public class ScreenFactory {
 		screenPool.put(s, screen);
 		return screen;
 	}
-//	public void create(Screen screen) {
+	//public void create(Screen screen) {
 //		this.screen = screen;
 //		this.screen.onCreate();
 //	}
