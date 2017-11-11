@@ -54,6 +54,8 @@ public class Game {
 		
 		new Thread(gameThread).start();
 		
+		window.setVisible(true);
+		
 		
 	}
 	
