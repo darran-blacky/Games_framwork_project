@@ -10,6 +10,9 @@ import character.Circle;
 import character.ConcreteVisitor;
 import character.Shape;
 import character.Square;
+import interceptor.ConcreteContext;
+import interceptor.ConcreteInterceptor;
+import interceptor.Dispatcher;
 
 public class GameScreen extends Screen {
 	private CharacterFactory character = new CharacterFactory();
@@ -17,6 +20,7 @@ public class GameScreen extends Screen {
 	private Character enemy;
 	private Character npc;// ,n9,n8,n7;
 	private Shape[] shapes;
+	private Dispatcher dis;
 
 	private Caretaker ct;
 	private Originator orig;
@@ -25,8 +29,10 @@ public class GameScreen extends Screen {
 		super(screenFactory);
 		orig = new Originator();
 		ct = new Caretaker();
-
+		dis = new Dispatcher();
 		shapes = new Shape[3];
+		dis.regi(new ConcreteInterceptor(), 0);
+
 	}
 
 	@Override
@@ -66,6 +72,7 @@ public class GameScreen extends Screen {
 		npc.update();
 		if (getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_ESCAPE)) {
 			getScreenFactory().createScreen("p");
+			dis.update(new ConcreteContext(), 0);
 		}
 		if (getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_F5)) {
 			orig.setPlayerX(player.getX());
@@ -92,7 +99,6 @@ public class GameScreen extends Screen {
 			cv.visit(shapes[2]);
 		}
 	}
-
 
 	@Override
 	public void onDraw(Graphics2D g2d) {
