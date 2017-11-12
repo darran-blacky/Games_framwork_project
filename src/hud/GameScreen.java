@@ -15,12 +15,8 @@ public class GameScreen extends Screen {
 	private CharacterFactory character = new CharacterFactory();
 	private Character player;
 	private Character enemy;
-<<<<<<< HEAD
 	private Character npc;// ,n9,n8,n7;
 	private Shape[] shapes;
-=======
-	private Character npc;
->>>>>>> 12b3f2f7d7a0e9aaa1a04686fd2c3259ae10ed77
 
 	private Caretaker ct;
 	private Originator orig;
@@ -48,7 +44,6 @@ public class GameScreen extends Screen {
 			player.setX(orig.getPlayerX());
 			player.setY(orig.getPlayerY());
 		}
-<<<<<<< HEAD
 
 		// player.setY(100);
 		// n9= character.makeCharacter("p", new Square());
@@ -62,9 +57,6 @@ public class GameScreen extends Screen {
 		// player = new Player(400,300);
 		// npc = new NPC(500, 500);
 		// headud = new HeadUD();
-
-=======
->>>>>>> 12b3f2f7d7a0e9aaa1a04686fd2c3259ae10ed77
 	}
 
 	@Override
