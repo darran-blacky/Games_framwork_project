@@ -20,4 +20,5 @@ public abstract class Screen {
 	public ScreenFactory getScreenFactory() {
 		return screenFactory;
 	}
+	public abstract void onReset();
 }

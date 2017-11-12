@@ -20,12 +20,7 @@ public class CharacterFactory {
 	
 	
 	public Character makeCharacter(String entity, DrawingAPI d_api) {
-		Character character;
-		if (characterPool.containsKey(entity)) {
-			System.out.println("CHARACTER ALREADY IN THE POOL : " + characterPool.get(entity).getName());
-			character =  characterPool.get(entity);
-		}
-		else {		
+		Character character;	
 			
 			
 			if(entity.equals("p")) {
@@ -45,8 +40,6 @@ public class CharacterFactory {
 				character = null;
 			}
 			characterPool.put(entity, character);
-			
-	    }
 		return character;
 	}
 }

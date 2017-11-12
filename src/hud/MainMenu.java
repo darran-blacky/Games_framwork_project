@@ -28,6 +28,7 @@ public class MainMenu extends Screen {
 		if(getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_N)) {
 			screen = getScreenFactory().createScreen("g");
 			screen.onCreate();
+			screen.onReset();
 		}
 		if(getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_E)) {
 			System.exit(0);
@@ -51,5 +52,8 @@ public class MainMenu extends Screen {
 				g2d.drawString("[E] Exit Game", ExitButton.x + 30, ExitButton.y + 45);
 				g2d.draw(ExitButton);
 	}
+	
+	@Override
+	public void onReset() {}
  
 }

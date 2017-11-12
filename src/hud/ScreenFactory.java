@@ -44,6 +44,7 @@ public class ScreenFactory {
 			}
 			else if(s.equals("g")) {
 				screen = new GameScreen(game.getScreenFactory());
+				
 			}
 		screenPool.put(s, screen);
 		return screen;

@@ -13,8 +13,7 @@ public class PauseScreen extends Screen {
 	public Rectangle option = new Rectangle(400-150, 100-60, 300, 64);
 	public Rectangle mainButton = new Rectangle(400-150, 200-60, 300, 64);
 	public Rectangle continueButton = new Rectangle(400-150, 300-60, 300, 64);
-	public Rectangle saveButton = new Rectangle(400-150, 400-60, 300, 64);
-	public Rectangle exitButton = new Rectangle(400-150, 500-60, 300, 64);
+	public Rectangle exitButton = new Rectangle(400-150, 400-60, 300, 64);
 	public PauseScreen(ScreenFactory screenFactory) {
 		super(screenFactory);
 		
@@ -29,6 +28,7 @@ public class PauseScreen extends Screen {
 	@Override
 	public void onUpdate() {
 		if(getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_C)) {
+			
 			screen = getScreenFactory().createScreen("g");
 			screen.onCreate();
 		}
@@ -52,7 +52,6 @@ public class PauseScreen extends Screen {
 		g2d.draw(option);
 		g2d.draw(mainButton);
 		g2d.draw(continueButton);
-		g2d.draw(saveButton);
 		g2d.draw(exitButton);
 		
 
@@ -60,15 +59,16 @@ public class PauseScreen extends Screen {
 		g2d.setFont(f);
 		
 		g2d.drawString("OPTIONS", 400-60, 70);
-		g2d.drawString("[E] Exit Game", 400-136, 200-24);
-		g2d.drawString("[S] Save Game", 400-136, 300-24);
-		g2d.drawString("[C] Continue Game", 400-136, 400-24);
-		g2d.drawString("[M] Main Menu", 400-136, 500-24);
+		g2d.drawString("[M] Main Menu", 400-136, 200-24);
+		g2d.drawString("[C] Continue Game", 400-136, 300-24);
+		g2d.drawString("[E] Exit Game", 400-136, 400-24);
 
 		
 		g2d.setFont(f2);
 		g2d.drawString("Press key relative to option", 400-95, 90);
 
 	}
+	@Override
+	public void onReset() {}
 
 }
