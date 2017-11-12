@@ -9,15 +9,10 @@ import character.Circle;
 import character.Square;
 
 public class GameScreen extends Screen {
-
-	// private Enemy enemy;
-	// private Player player;
-	// private NPC npc;
-	// private HeadUD headud;
 	private CharacterFactory character = new CharacterFactory();
 	private Character player;
 	private Character enemy;
-	private Character npc;// ,n9,n8,n7;
+	private Character npc;
 
 	private Caretaker ct;
 	private Originator orig;
@@ -41,20 +36,6 @@ public class GameScreen extends Screen {
 			player.setX(orig.getPlayerX());
 			player.setY(orig.getPlayerY());
 		}
-		
-		// player.setY(100);
-		// n9= character.makeCharacter("p", new Square());
-		// n8= character.makeCharacter("p" , new Square());
-		// n8.setY(100);
-		// n8.setX(100);
-		// player.setX(400);
-		// player.setY(400);
-		// n7= character.makeCharacter("n", new Square());
-		// enemy = new Enemy(200,100);
-		// player = new Player(400,300);
-		// npc = new NPC(500, 500);
-		// headud = new HeadUD();
-
 	}
 
 	@Override
@@ -85,8 +66,6 @@ public class GameScreen extends Screen {
 		player.draw(g2d);
 		enemy.draw(g2d);
 		npc.draw(g2d);
-		// /headud.draw(g2d);
-
 	}
 
 	public Character getCharacter() {
