@@ -54,6 +54,7 @@ public class PauseScreen extends Screen {
 		g2d.draw(continueButton);
 		g2d.draw(saveButton);
 		g2d.draw(exitButton);
+		
 
 		//text
 		g2d.setFont(f);
