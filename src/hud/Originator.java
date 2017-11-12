@@ -2,7 +2,6 @@ package hud;
 
 public class Originator {
 	private int playerX, playerY;
-	
 	public void setPlayerX(int playerX) { this.playerX = playerX; }
 	public void setPlayerY(int playerY) { this.playerY = playerY; }
 
@@ -19,4 +18,5 @@ public class Originator {
 		playerX = m.getPlayerX();
 		playerY = m.getPlayerY();
 	}
+	
 }

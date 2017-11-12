@@ -34,13 +34,12 @@ public class Game {
 		   
 		//creating window
 		window.setSize(x,y);
-		window.setResizable(true);
+		window.setResizable(false);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setFocusable(true); //allow for keyboard input
 	    window.setLocationRelativeTo(null); //center the frame
 		window.setTitle(title);
 		window.setVisible(true);
-		
 		
 		screenFactory = new ScreenFactory(this);
 		
@@ -49,14 +48,10 @@ public class Game {
 		
 		window.add(gameThread);
 		window.addKeyListener(keyListener);
-		
-		
-		
+	
 		new Thread(gameThread).start();
 		
 		window.setVisible(true);
-		
-		
 	}
 	
 	public ScreenFactory getScreenFactory() {

@@ -5,14 +5,8 @@ import java.awt.event.KeyEvent;
 
 import hud.Screen;
 
-public abstract class Character {
-	
-	
+public abstract class Character {	
 	DrawingAPI draw_api;
-	
-	
-	//private static final int WIDTH = 64, HEIGHT = 64;
-	private int velX, velY;
 	protected int x;
 	protected int y;
 	private State state;
@@ -72,13 +66,12 @@ public abstract class Character {
 		}
 		else
 			this.state = default_State;
-		    this.state.doAction(this);
+		    this.state.doAction(this);	
+		    
+		    checkBorderCollision();
 		}
 	
 	public void update() {
-		setX(getX() - velX);
-		setY(getY() - velY);
-		
 		
 	}
 	//Methods for the character to move
@@ -91,9 +84,15 @@ public abstract class Character {
 	
 	public abstract void draw(Graphics2D g2d);
 	
-	public Rectangle getBounds(int width, int height) {
-		return new Rectangle((int)x, (int)y, width, height);
-		
+	public void checkBorderCollision() {
+		if( y>=562-64)
+	    	y=562 -64;
+	    if(y<=0)
+	    	y=0;
+	    if(x>=785-64)
+	    	x=785-64;
+	    if(x <=0)
+	    	x=0;
 	}
 	public void setState(State state) {
 		this.state = state;

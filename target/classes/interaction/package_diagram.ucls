@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <package id="1" language="java" name="interaction" project="CS4227_Project" file="/CS4227_Project/src/interaction" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="687" width="948" x="-27" y="4"/>    
+    <position height="687" width="948" x="-87" y="-21"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
   <class id="2" language="java" name="interaction.button_A" project="CS4227_Project" 
@@ -24,16 +24,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="interaction.Player" project="CS4227_Project" 
-    file="/CS4227_Project/src/interaction/Player.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="559" y="581"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="interaction.Keyboard_input" project="CS4227_Project" 
+  <class id="4" language="java" name="interaction.Keyboard_input" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/Keyboard_input.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="310" y="146"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -42,7 +33,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="6" language="java" name="interaction.Command" project="CS4227_Project" 
+  <interface id="5" language="java" name="interaction.Command" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/Command.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="606" y="147"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -51,7 +42,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="7" language="java" name="interaction.button_W" project="CS4227_Project" 
+  <class id="6" language="java" name="interaction.button_W" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/button_W.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="701" y="352"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -60,7 +51,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="interaction.button_S" project="CS4227_Project" 
+  <class id="7" language="java" name="interaction.button_S" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/button_S.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="423" y="350"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -69,7 +60,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="interaction.button_D" project="CS4227_Project" 
+  <class id="8" language="java" name="interaction.button_D" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/button_D.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="101" width="119" x="217" y="298"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -78,7 +69,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="interaction.button_shoot" project="CS4227_Project" 
+  <class id="9" language="java" name="interaction.button_shoot" project="CS4227_Project" 
     file="/CS4227_Project/src/interaction/button_shoot.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="843" y="352"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -87,73 +78,37 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="11">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="12" name="player"/>      
-      <multiplicity id="13" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="14">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="15" name="player"/>      
-      <multiplicity id="16" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="17">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="18" name="player"/>      
-      <multiplicity id="19" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="20">    
+  <realization id="10">    
     <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="TARGET" refId="5"/>  
   </realization>  
-  <realization id="21">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <association id="22">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="23" name="player"/>      
-      <multiplicity id="24" minimum="0" maximum="1"/>    
+  <association id="11">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="12" name="command">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="13" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="25">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <realization id="26">    
+  <realization id="14">    
     <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="TARGET" refId="5"/>  
   </realization>  
-  <association id="27">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="28" name="player"/>      
-      <multiplicity id="29" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="30">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="31" name="command"/>      
-      <multiplicity id="32" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="33">    
+  <realization id="15">    
     <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="6"/>  
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <realization id="16">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <realization id="17">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
   </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

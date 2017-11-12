@@ -48,12 +48,7 @@ public class ScreenFactory {
 			}
 		screenPool.put(s, screen);
 		return screen;
-	}
-	//public void create(Screen screen) {
-//		this.screen = screen;
-//		this.screen.onCreate();
-//	}
-//	
+	}	
 	public Screen getCurrentScreen() {
 		return screen;
 	}

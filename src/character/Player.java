@@ -12,6 +12,9 @@ public class Player extends Character{
 		super(x,y,name, d_api);
 	}
 	
+	public void update() {
+	}
+	
 	@Override
 	public void draw(Graphics2D g2d) {
 		 draw_api.drawWorldObject(getX(), getY(), WIDTH, HEIGHT , g2d);
