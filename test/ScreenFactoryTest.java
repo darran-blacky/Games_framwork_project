@@ -6,10 +6,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import HUD.Game;
-import HUD.GameScreen;
-import HUD.Screen;
-import HUD.ScreenFactory;
+import hud.Game;
+import hud.GameScreen;
+import hud.Screen;
+import hud.ScreenFactory;
 import character.Character;
 import character.Square;
 		
