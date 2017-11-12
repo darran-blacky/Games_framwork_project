@@ -1,0 +1,6 @@
+package character;
+
+public interface Visitable {
+	public void accept (Visitor visit);
+
+}

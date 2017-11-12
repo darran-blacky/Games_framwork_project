@@ -2,6 +2,7 @@ package hud;
 
 
 import javax.swing.JFrame;
+
 import character.Character;
 import interaction.Keyboard_input;
 import interaction.button_A;
@@ -19,6 +20,7 @@ public class Game {
 	private final GameThread gameThread;
 	private final keyboardListener keyListener;
 	private final Keyboard_input controller = new Keyboard_input();
+	protected int x, y;
 	
 	  button_A left;
 	  button_S down ;
@@ -26,7 +28,8 @@ public class Game {
 	  button_W up ;
 	
 	public Game(int x, int y, String title) {
-		
+		this.x = x;
+		this.y = y;
 		left = null;
 		down = null ;
 		right = null ;
@@ -39,8 +42,6 @@ public class Game {
 		window.setFocusable(true); //allow for keyboard input
 	    window.setLocationRelativeTo(null); //center the frame
 		window.setTitle(title);
-		window.setVisible(true);
-		
 		screenFactory = new ScreenFactory(this);
 		
 		gameThread = new GameThread(this);
