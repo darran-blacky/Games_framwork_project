@@ -24,16 +24,14 @@ import org.junit.Test;
 
 
 public class CommandPatternTests {
-//	Game game = new Game(800, 600, "Testing");
-//	GameScreen GS ; //= new GameScreen(game.getScreenFactory());
-//	Game GS2 = game.getScreenFactory().createScreen(new GameScreen(game.getScreenFactory()));
-//	game.getScreenFactory().createScreen(new GameScreen(game.getScreenFactory()));
+
 	
 	
 	CharacterFactory cf = new CharacterFactory();
 	
 	//Keyboard Invoker
 	Keyboard_input keyboard = new Keyboard_input();
+	
 	//PLAYER Receiver
 	Character player = cf.makeCharacter("p" , new Square());
 	
@@ -41,29 +39,25 @@ public class CommandPatternTests {
 	
 	//MOVE_LEFT Concrete command
 	button_A left = new button_A(player);
+	
 	//MOVE_RIGHT Concrete command
 	button_D right = new button_D(player);
+	
 	//MOVE_UP Concrete command
 	button_W up = new button_W(player);
+	
 	//MOVE_DOWN Concrete command
 	button_S down = new button_S(player);
 	
 	
-	int Expected = player.getX() - 2;
-	
-	
+	int Expected_Left = player.getX() - 1;
+	int Expected_Right = player.getX() + 1;
+	int Expected_UP = player.getY() - 1;
+	int Expected_Down = player.getY() + 1;
 	//Character gameCharacter = game.getGame().getScreenFactory().getCurrentScreen().
 	
 	@Before
 	public void setUp() throws Exception {
-		
-		//game.getScreenFactory().createScreen(new GameScreen(game.getScreenFactory()));
-		
-		//x = GS.getCharacter().getX();
-		//.out.print(x);
-		
-		
-		
 		
 	}
 	
@@ -78,7 +72,39 @@ public class CommandPatternTests {
 		//Tests 
 				keyboard.setCommand(left);
 				keyboard.buttonPressed();
-				System.out.print("Expecting " + player.getX() + " to be : " + Expected);
-				assertEquals(Expected, player.getX());
+				System.out.print("Expecting " + player.getX() + " to be : " + Expected_Left);
+				assertEquals(Expected_Left, player.getX());
 	}
+	
+
+	@Test
+	public void testNewMoveRigthCommand() {
+		//Tests 
+				keyboard.setCommand(right);
+				keyboard.buttonPressed();
+				System.out.print("Expecting " + player.getX() + " to be : " + Expected_Right);
+				assertEquals(Expected_Right, player.getX());
+	}
+	
+	
+
+	@Test
+	public void testNewMoveUPCommand() {
+		//Tests 
+				keyboard.setCommand(up);
+				keyboard.buttonPressed();
+				System.out.print("Expecting " + player.getY() + " to be : " + Expected_UP);
+				assertEquals(Expected_UP, player.getY());
+	}
+	
+
+	@Test
+	public void testNewMoveDownCommand() {
+		//Tests 
+				keyboard.setCommand(down);
+				keyboard.buttonPressed();
+				System.out.print("Expecting " + player.getY() + " to be : " + Expected_Down);
+				assertEquals(Expected_Down, player.getY());
+	}
+	
 }
