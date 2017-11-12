@@ -1,6 +1,4 @@
 package character;
-
-import java.awt.Color;
 import java.awt.Graphics2D;
 
 public class NPC extends Character{

@@ -3,12 +3,18 @@ package hud;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 
 public class PauseScreen extends Screen {
 	private Screen screen;
-	Font f = new Font("TimesRoman", Font.PLAIN, 28);
-	Font f2 = new Font("TimesRoman", Font.PLAIN, 16);
+	Font f = new Font("arial", Font.BOLD, 28);
+	Font f2 = new Font("arial", Font.BOLD, 16);
+	public Rectangle option = new Rectangle(400-150, 100-60, 300, 64);
+	public Rectangle mainButton = new Rectangle(400-150, 200-60, 300, 64);
+	public Rectangle continueButton = new Rectangle(400-150, 300-60, 300, 64);
+	public Rectangle saveButton = new Rectangle(400-150, 400-60, 300, 64);
+	public Rectangle exitButton = new Rectangle(400-150, 500-60, 300, 64);
 	public PauseScreen(ScreenFactory screenFactory) {
 		super(screenFactory);
 		
@@ -39,19 +45,18 @@ public class PauseScreen extends Screen {
 	@Override
 	public void onDraw(Graphics2D g2d) {
 		//Background
-		g2d.setColor(Color.GRAY);
+		g2d.setColor(Color.BLACK);
 		g2d.fillRect(0, 0, 800, 600);
 		//Options Boxes
-		g2d.setColor(Color.BLACK);
-		g2d.fillRect(400-150, 100-60, 300, 64);
-		g2d.fillRect(400-150, 200-64, 300, 64);
-		g2d.fillRect(400-150, 300-64, 300, 64);
-		g2d.fillRect(400-150, 400-64, 300, 64);
-		g2d.fillRect(400-150, 500-64, 300, 64);
+		g2d.setColor(Color.WHITE);
+		g2d.draw(option);
+		g2d.draw(mainButton);
+		g2d.draw(continueButton);
+		g2d.draw(saveButton);
+		g2d.draw(exitButton);
 
 		//text
 		g2d.setFont(f);
-		g2d.setColor((Color.WHITE));
 		
 		g2d.drawString("OPTIONS", 400-60, 70);
 		g2d.drawString("[E] Exit Game", 400-136, 200-24);
@@ -61,7 +66,7 @@ public class PauseScreen extends Screen {
 
 		
 		g2d.setFont(f2);
-		g2d.drawString("Press key relative to option", 400-75, 90);
+		g2d.drawString("Press key relative to option", 400-95, 90);
 
 	}
 

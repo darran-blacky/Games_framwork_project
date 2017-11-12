@@ -1,17 +1,15 @@
 package character;
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
-
 import hud.Screen;
 
-public abstract class Character {	
+public abstract class Character{	
 	DrawingAPI draw_api;
 	protected int x;
 	protected int y;
 	private State state;
 	private State default_State = new WalkingState();
-	private String name; // this is just hard coded temporarily for the move methods below with will interact with command pattern
+	protected String name; // this is just hard coded temporarily for the move methods below with will interact with command pattern
 
 
 	private int speed;
@@ -72,7 +70,7 @@ public abstract class Character {
 		}
 	
 	public void update() {
-		
+	
 	}
 	//Methods for the character to move
 	public void move_up()		{ 	setY(getY() - speed); System.out.println(name + " moved up."); 			}

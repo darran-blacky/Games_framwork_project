@@ -32,8 +32,7 @@ public class ScreenFactory {
 	public Screen createScreen(String s) {
 		
 		if (screenPool.containsKey(s)) {
-			System.out.println("SCREEN ALREADY IN THE POOL : ");
-			return screenPool.get(s);
+			screen = screenPool.get(s);
 		}
 		else 		
 			if(s.equals("m")) {

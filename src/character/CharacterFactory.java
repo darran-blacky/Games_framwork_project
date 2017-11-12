@@ -19,13 +19,14 @@ public class CharacterFactory {
 	}
 	
 	
-	public Character makeCharacter(String entity, DrawingAPI d_api) {	
+	public Character makeCharacter(String entity, DrawingAPI d_api) {
+		Character character;
 		if (characterPool.containsKey(entity)) {
 			System.out.println("CHARACTER ALREADY IN THE POOL : " + characterPool.get(entity).getName());
-			return characterPool.get(entity);
+			character =  characterPool.get(entity);
 		}
 		else {		
-			Character character;
+			
 			
 			if(entity.equals("p")) {
 			    character = new Player(400,300,"PLAYER" , d_api);
@@ -44,8 +45,9 @@ public class CharacterFactory {
 				character = null;
 			}
 			characterPool.put(entity, character);
-			return character;
+			
 	    }
+		return character;
 	}
 }
 

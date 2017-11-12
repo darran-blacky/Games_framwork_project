@@ -59,6 +59,7 @@ public class GameScreen extends Screen {
 				player.setY(orig.getPlayerY());
 			}
 		}
+		
 	}
 
 	@Override
