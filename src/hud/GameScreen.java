@@ -18,10 +18,10 @@ public class GameScreen extends Screen {
 	private CharacterFactory character = new CharacterFactory();
 	private Character player;
 	private Character enemy;
-	private Character npc;// ,n9,n8,n7;
+	private Character npc;
 	private Shape[] shapes;
 	private Dispatcher dis;
-
+	ConcreteVisitor cv;
 	private Caretaker ct;
 	private Originator orig;
 
@@ -32,7 +32,7 @@ public class GameScreen extends Screen {
 		dis = new Dispatcher();
 		shapes = new Shape[3];
 		dis.regi(new ConcreteInterceptor(), 0);
-
+		cv = new ConcreteVisitor();
 	}
 
 	@Override
@@ -82,17 +82,17 @@ public class GameScreen extends Screen {
 				player.setY(orig.getPlayerY());
 			}
 		}
-
+		
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F1)) {
-			ConcreteVisitor cv = new ConcreteVisitor();
+			
 			cv.visit(shapes[0]);
 		}
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F2)) {
-			ConcreteVisitor cv = new ConcreteVisitor();
+			
 			cv.visit(shapes[1]);
 		}
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F3)) {
-			ConcreteVisitor cv = new ConcreteVisitor();
+			
 			cv.visit(shapes[2]);
 		}
 	}
