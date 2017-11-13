@@ -4,35 +4,49 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;
 import java.util.Map;
-import character.Character;
 
 public class Keyboard_input implements KeyListener{
 
-//	Command command;
+	
 	Map<String, Command> movement_commands;
-	Map<String, Command> screen_commands;
+	Command command;
 	
 	public Keyboard_input(){
 		movement_commands = new HashMap<String , Command>();
 	}
 	
-//	public void handleInput(String key , Character c) {
-//		if (commands.containsKey(key)) {
-//			commands.get(key).execute(c);
-//		}
-//	}
-//	
+	public void handle_input(){
+		if(isKeyPressed(KeyEvent.VK_A))  this.buttonPressed("A");
+		if(isKeyPressed(KeyEvent.VK_D))  this.buttonPressed("D");
+		if(isKeyPressed(KeyEvent.VK_W))  this.buttonPressed("W");
+		if(isKeyPressed(KeyEvent.VK_S))  this.buttonPressed("S");
+		if(isKeyPressed(KeyEvent.VK_SHIFT) && !isKeyReleased(KeyEvent.VK_SHIFT)) {
+			command = movement_commands.get("esc");
+			this.buttonPressed("esc");
+		}
+		else if(!isKeyPressed(KeyEvent.VK_SHIFT)) { this.undoButtonPressed(); }
+		
+//		if(isKeyReleased(KeyEvent.VK_SHIFT)) 
+     //movement_commands = new HashMap<String , Command>();
+		
+	}
 	public void setCommand(String button, Command command){ 
 		
 		movement_commands.put(button, command);
 	}
 	
-	public void buttonPressed(String button, Character c){
+	public void buttonPressed(String button){
 		
-		movement_commands.get(button).execute(c);
+		//command = movement_commands.get(button);
 		
+		movement_commands.get(button).execute();
+	
 	}
 	
+	public void undoButtonPressed(){
+		command.undo();
+	}
+   
 	private boolean[] keys = new boolean[256];
 	@Override
 	public void keyPressed(KeyEvent event) {

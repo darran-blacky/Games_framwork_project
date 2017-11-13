@@ -1,6 +1,7 @@
 package interaction;
-import character.Character;
+
 
 public interface Command {
-	public void execute(Character c);
+	public void execute();
+	public void undo();
 }

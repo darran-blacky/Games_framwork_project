@@ -22,7 +22,7 @@ public class GameScreen extends Screen {
 	private Shape[] shapes;
 	private Dispatcher dis;
 	private int[] countdowns;
-	ConcreteVisitor cv;
+	private ConcreteVisitor cv;
 	
 	private Caretaker ct;
 	private Originator orig;
@@ -46,10 +46,19 @@ public class GameScreen extends Screen {
 		shapes[1] = new Circle(Color.RED);
 		shapes[2] = new Square(Color.BLUE);
 		player = character.makeCharacter("p", (Square) shapes[0]);
+
+		enemy  = character.makeCharacter("e", (Circle) shapes[1]);
+		npc    = character.makeCharacter("n", (Square) shapes[2]);
+		
+		super.getScreenFactory().getGame().setActivePlayer(player);
+		super.getScreenFactory().getGame().setControllerCommands();
+		
+
 		enemy = character.makeCharacter("e", (Circle) shapes[1]);
 		npc = character.makeCharacter("n", (Square) shapes[2]);
 		//Set collection to store enough colors for all current characters
 		orig.setColorCollectionSize(3); 
+
 
 		if (ct.getMemento() != null) {
 			readRetrieveMemento("Screen is being re-loaded, retrieving saved data.");
@@ -141,8 +150,10 @@ public class GameScreen extends Screen {
 	}
 	@Override
 	public void onReset() {
+		onCreate();
 		player.setX(400);
 		player.setY(300);
+		
 	}
 
 }

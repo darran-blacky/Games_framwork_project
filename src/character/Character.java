@@ -12,7 +12,8 @@ public abstract class Character {
 	protected int y;
 	private State state;
 	private State default_State = new WalkingState();
-	protected String name; // this is just hard coded temporarily for the move methods below with will interact with command pattern
+	protected String name; 
+	private Shape shape;// this is just hard coded temporarily for the move methods below with will interact with command pattern
 
 	//private String name; // this is just hard coded temporarily for the move methods below with will
 							// interact with command pattern
@@ -50,38 +51,15 @@ public abstract class Character {
 	}
 
 	public void update(Screen screen) {
-		
-	
-		if (screen.getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_A)) {
-			screen.getScreenFactory().getGame().getController().buttonPressed("A", this);
-//			handleInput("A", this);
+		try {
+			screen.getScreenFactory().getGame().getController().handle_input();
+			checkBorderCollision();
 		}
-
-		 if (screen.getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_D)) {
-			screen.getScreenFactory().getGame().getController().buttonPressed("D", this);
-			//.handleInput("D", this);
-		}
-
-		 if (screen.getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_W)) {
-			screen.getScreenFactory().getGame().getController().buttonPressed("W", this);
-		}
-
-		 if (screen.getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_S)) {
-			screen.getScreenFactory().getGame().getController().buttonPressed("S", this);
-
-		}
-	     if (screen.getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_SHIFT)
-				&& (!(screen.getScreenFactory().getGame().getController().isKeyReleased(KeyEvent.VK_SHIFT)))) {
-			this.state = new SprintingState();
+		catch(Exception e) {
+			this.state = default_State;
 			this.state.doAction(this);
-
 		}
 		
-		else 
-		this.state = default_State;
-		this.state.doAction(this);
-
-		checkBorderCollision();
 	}
 
 	public void update() {
