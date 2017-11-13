@@ -6,7 +6,6 @@ public class Memento {
 	{
 		this.playerX = playerX;
 		this.playerY = playerY;
-//		this.color = 
 	}
 	
 	public int getPlayerX() 

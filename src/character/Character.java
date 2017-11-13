@@ -19,6 +19,7 @@ public abstract class Character {
 
 	private int speed;
 
+	
 	public Character(int x, int y, String name, DrawingAPI draw_api) {
 		this.name = name;
 		this.x = x;
@@ -49,29 +50,35 @@ public abstract class Character {
 	}
 
 	public void update(Screen screen) {
-		if (screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_A)) {
-			screen.getScreenFactory().getGame().handleInput("A", this);
+		
+	
+		if (screen.getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_A)) {
+			screen.getScreenFactory().getGame().getController().buttonPressed("A", this);
+//			handleInput("A", this);
 		}
 
-		if (screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_D)) {
-			screen.getScreenFactory().getGame().handleInput("D", this);
+		 if (screen.getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_D)) {
+			screen.getScreenFactory().getGame().getController().buttonPressed("D", this);
+			//.handleInput("D", this);
 		}
 
-		if (screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_W)) {
-			screen.getScreenFactory().getGame().handleInput("W", this);
+		 if (screen.getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_W)) {
+			screen.getScreenFactory().getGame().getController().buttonPressed("W", this);
 		}
 
-		if (screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_S)) {
-			screen.getScreenFactory().getGame().handleInput("S", this);
+		 if (screen.getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_S)) {
+			screen.getScreenFactory().getGame().getController().buttonPressed("S", this);
 
 		}
-		if (screen.getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_SHIFT)
-				&& (!(screen.getScreenFactory().getGame().getKeyListener().isKeyReleased(KeyEvent.VK_SHIFT)))) {
+	     if (screen.getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_SHIFT)
+				&& (!(screen.getScreenFactory().getGame().getController().isKeyReleased(KeyEvent.VK_SHIFT)))) {
 			this.state = new SprintingState();
 			this.state.doAction(this);
 
-		} else
-			this.state = default_State;
+		}
+		
+		else 
+		this.state = default_State;
 		this.state.doAction(this);
 
 		checkBorderCollision();

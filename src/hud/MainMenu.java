@@ -25,12 +25,12 @@ public class MainMenu extends Screen {
 
 	@Override
 	public void onUpdate() {
-		if(getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_N)) {
+		if(getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_N)) {
 			screen = getScreenFactory().createScreen("g");
 			screen.onCreate();
 			screen.onReset();
 		}
-		if(getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_E)) {
+		if(getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_E)) {
 			System.exit(0);
 		}
 		

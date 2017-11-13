@@ -59,16 +59,15 @@ public class GameScreen extends Screen {
 		player.update(this);
 		enemy.update();
 		npc.update();
-		if (getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_ESCAPE)) {
+		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_ESCAPE)) {
 			getScreenFactory().createScreen("p");
 			orig.setPlayerX(player.getX());
 			orig.setPlayerY(player.getY());
-			orig.setColour()
 			ct.addMemento(orig.save());
 			dis.update(new ConcreteContext(), 0);
 		}
 
-		if (getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_F9)) {
+		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F9)) {
 			if (ct.getMemento() != null) {
 				orig.restore(ct.getMemento());
 				player.setX(orig.getPlayerX());
@@ -76,15 +75,15 @@ public class GameScreen extends Screen {
 			}
 		}
 
-		if (getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_F1)) {
+		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F1)) {
 			ConcreteVisitor cv = new ConcreteVisitor();
 			cv.visit(shapes[0]);
 		}
-		if (getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_F2)) {
+		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F2)) {
 			ConcreteVisitor cv = new ConcreteVisitor();
 			cv.visit(shapes[1]);
 		}
-		if (getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_F3)) {
+		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F3)) {
 			ConcreteVisitor cv = new ConcreteVisitor();
 			cv.visit(shapes[2]);
 		}

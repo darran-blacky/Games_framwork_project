@@ -1,14 +1,66 @@
 package interaction;
 
-public class Keyboard_input {
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.HashMap;
+import java.util.Map;
+import character.Character;
 
-Command command;
+public class Keyboard_input implements KeyListener{
+
+//	Command command;
+	Map<String, Command> commands;
 	
-	public Keyboard_input(){}
+	public Keyboard_input(){
+		commands = new HashMap<String , Command>();
+	}
 	
+//	public void handleInput(String key , Character c) {
+//		if (commands.containsKey(key)) {
+//			commands.get(key).execute(c);
+//		}
+//	}
+//	
+	public void setCommand(String button, Command command){ 
+		
+//		this.command = command; 
+		commands.put(button, command);
+		for (Map.Entry<String, Command> entry : commands.entrySet()) {
+		    String key = entry.getKey();
+//		    Object value = entry.getValue();
+		    System.out.print(key + " IS SET");
+		    // ...
+		}
+	}
 	
+	public void buttonPressed(String button, Character c){
+		
+		commands.get(button).execute(c);
+		
+	}
 	
-	public void setCommand(Command command){ this.command = command; }
+	private boolean[] keys = new boolean[256];
+	@Override
+	public void keyPressed(KeyEvent event) {
+		
+		keys[event.getKeyCode()] = true;
+	}
+
+	@Override
+	public void keyReleased(KeyEvent event) {
+		keys[event.getKeyCode()] = false;
+	}
+
+	@Override
+	public void keyTyped(KeyEvent event) {
+		
+	}
 	
-	public void buttonPressed(){ command.execute(); }
+	public boolean isKeyPressed(int key) {
+		return keys[key];
+	}
+	
+	public boolean isKeyReleased(int key) {
+		return !keys[key];
+	}
 }

@@ -27,16 +27,16 @@ public class PauseScreen extends Screen {
 
 	@Override
 	public void onUpdate() {
-		if(getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_C)) {
+		if(getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_C)) {
 			
 			screen = getScreenFactory().createScreen("g");
 			screen.onCreate();
 		}
-		if(getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_M)) {
+		if(getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_M)) {
 			screen = getScreenFactory().createScreen("m");
 			screen.onCreate();
 		}
-		if(getScreenFactory().getGame().getKeyListener().isKeyPressed(KeyEvent.VK_E)) {
+		if(getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_E)) {
 			System.exit(0);
 		}
 
