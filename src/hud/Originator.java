@@ -8,7 +8,6 @@ public class Originator {
 	
 	public void setPlayerX(int playerX) { this.playerX = playerX; }
 	public void setPlayerY(int playerY) { this.playerY = playerY; }
-
 	public void setColorAt(Color col, int position) { this.colCollection[position] = col; }
 	public void setColorCollectionSize(int size) { this.colCollection = new Color[size]; }
 	

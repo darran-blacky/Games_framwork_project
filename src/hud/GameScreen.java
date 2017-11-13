@@ -52,7 +52,7 @@ public class GameScreen extends Screen {
 		orig.setColorCollectionSize(3); 
 
 		if (ct.getMemento() != null) {
-			readRetrieveMemento();
+			readRetrieveMemento("Screen is being re-loaded, retrieving saved data.");
 		}
 	
 	}
@@ -73,7 +73,7 @@ public class GameScreen extends Screen {
 
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F9) && countdowns[1] == 0) {
 			if (ct.getMemento() != null) {
-				readRetrieveMemento();
+				readRetrieveMemento("Quick Load is used and state is fetched from last Memento");
 				countdowns[1] = 50;
 			} else {
 				dis.update(new ConcreteContext("Attempt to Quick Load when no Memento exists."), 0);
@@ -120,13 +120,14 @@ public class GameScreen extends Screen {
 		dis.update(new ConcreteContext(purpose), 0);
 	}
 	
-	public void readRetrieveMemento() {
+	public void readRetrieveMemento(String purpose) {
 		orig.restore(ct.getMemento());
 		player.setX(orig.getPlayerX());
 		player.setY(orig.getPlayerY());
 		shapes[0].setColor(orig.getColorAt(0));
 		shapes[1].setColor(orig.getColorAt(1));
 		shapes[2].setColor(orig.getColorAt(2));
+		dis.update(new ConcreteContext(purpose), 0);
 	}
 
 	@Override
