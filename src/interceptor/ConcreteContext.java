@@ -1,25 +1,46 @@
 package interceptor;
 
-public class ConcreteContext implements ContextInterface {
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 
-	public String yoke;
+public class ConcreteContext implements ContextInterface {
+	public String data;
+	
+	public ConcreteContext(String data)
+	{
+		this.data = data;
+	}
 
 	@Override
 	public void createLog() {
-		System.out.println("this is log place");
-
+		//Log to Console.
+		System.out.println(data);
+		// Log to a file for reading post close of application.
+		try {
+		    BufferedWriter writer;
+		    File file = new File("Log.txt");
+		    if (file.exists())
+		    	file.createNewFile();
+	    	writer = new BufferedWriter(new FileWriter("Log.txt", true));
+	    	writer.write(data);
+	    	writer.newLine();
+		     
+		    writer.close();
+		} catch (Exception e)
+		{
+			System.out.println("ERROR: problem with File writing... (" + e.getMessage() + ")");
+		}
 	}
 
 	@Override
 	public String getContextString() {
-
-		return yoke;
+		return data;
 	}
 
 	@Override
 	public void setContextString(String contextString) {
-		this.yoke = contextString;
-
+		this.data = contextString;
 	}
 
 }

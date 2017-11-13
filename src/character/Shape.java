@@ -23,7 +23,7 @@ public class Shape implements Visitable {
 
 		random = new Color[7];
 		random[0] = Color.PINK;
-		random[1] = Color.BLACK;
+		random[1] = Color.ORANGE;
 		random[2] = Color.CYAN;
 		random[3] = Color.GRAY;
 		random[4] = Color.MAGENTA;
