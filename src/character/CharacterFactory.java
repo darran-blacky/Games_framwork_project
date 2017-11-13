@@ -33,9 +33,6 @@ public class CharacterFactory {
 			else if(entity.equals("n")) {
 				character =  new NPC(350,250,"NPC" , d_api);
 			}
-			else if(entity.equals("z")) {
-				character =  new Player(350,250,"WRONG PLAYER", d_api);
-			}
 			else{
 				character = null;
 			}

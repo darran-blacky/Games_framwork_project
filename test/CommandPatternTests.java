@@ -6,10 +6,10 @@ import character.Character;
 import character.CharacterFactory;
 
 import interaction.Keyboard_input;
-import interaction.button_A;
-import interaction.button_D;
-import interaction.button_S;
-import interaction.button_W;
+import interaction.MoveLeftCommand;
+import interaction.MoveRightCommand;
+import interaction.MoveDownCommand;
+import interaction.MoveUpCommand;
 import character.Square;
 
 import static org.junit.Assert.*;
@@ -38,17 +38,17 @@ public class CommandPatternTests {
 	
 	
 	//MOVE_LEFT Concrete command
-	button_A left = new button_A();
+	MoveLeftCommand left = new MoveLeftCommand();
 	
 	
 	//MOVE_RIGHT Concrete command
-	button_D right = new button_D();
+	MoveRightCommand right = new MoveRightCommand();
 	
 	//MOVE_UP Concrete command
-	button_W up = new button_W();
+	MoveUpCommand up = new MoveUpCommand();
 	
 	//MOVE_DOWN Concrete command
-	button_S down = new button_S();
+	MoveDownCommand down = new MoveDownCommand();
 	
 	
 	int Expected_Left = player.getX() - 2;

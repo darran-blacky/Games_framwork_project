@@ -4,10 +4,12 @@ package hud;
 import javax.swing.JFrame;
 
 import interaction.Keyboard_input;
-import interaction.button_A;
-import interaction.button_D;
-import interaction.button_S;
-import interaction.button_W;
+import interaction.MoveLeftCommand;
+import interaction.MoveRightCommand;
+import interaction.MoveDownCommand;
+import interaction.MoveUpCommand;
+import interaction.SprintingCommand;
+import character.Character;
 
 /*
  * starts game engine 
@@ -22,25 +24,23 @@ public class Game {
 	protected int x, y;
 	
 	
-	  button_A left = new button_A();
-	  button_S down = new button_S();
-	  button_D right = new button_D();
-	  button_W up = new button_W();
+	  MoveLeftCommand left;
+	  MoveDownCommand down;
+	  MoveRightCommand right;
+	  MoveUpCommand up ;
+	  SprintingCommand sprint;
 	  
   
 	
 	public Game(int x, int y, String title) {
 		this.x = x;
 		this.y = y;
-//		left = null;
-//		down = null ;
-//		right = null ;
-//		up = null ;
-		
-		controller.setCommand("W", up);
-		controller.setCommand("A", left);
-		controller.setCommand("S", down);
-		controller.setCommand("D", right);
+		left = null;
+		down = null ;
+		right = null ;
+		up = null ;
+		sprint = null;
+	
 		   
 		//creating window
 		window.setSize(x,y);
@@ -77,6 +77,24 @@ public class Game {
 		return controller;
 	}
 	
+	public void setActivePlayer(Character c) {
+		
+		  left   = new MoveLeftCommand(c);
+		  down   = new MoveDownCommand(c);
+		  right  = new MoveRightCommand(c);
+		  up 	 = new MoveUpCommand(c);
+		  sprint = new SprintingCommand(c);
+	}
+	
+
+	public void setControllerCommands() {
+		
+		controller.setCommand("W", up);
+		controller.setCommand("A", left);
+		controller.setCommand("S", down);
+		controller.setCommand("D", right);
+		controller.setCommand("esc", sprint);
+  }
 
 //		if(key.equals("A")){
 //			
@@ -101,3 +119,5 @@ public class Game {
 //		}
 //	}
 }
+
+
