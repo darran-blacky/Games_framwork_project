@@ -81,19 +81,16 @@ public class GameScreen extends Screen {
 			}
 		}
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F1) && countdowns[2] == 0) {
-			ConcreteVisitor cv = new ConcreteVisitor();
 			cv.visit(shapes[0]);
 			dis.update(new ConcreteContext("Player colour has been changed."), 0);
 			countdowns[2] = 100;
 		}
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F2) && countdowns[3] == 0) {
-			ConcreteVisitor cv = new ConcreteVisitor();
 			cv.visit(shapes[1]);
 			dis.update(new ConcreteContext("Enemy colour has been changed."), 0);
 			countdowns[3] = 100;
 		}
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F3) && countdowns[4] == 0) {
-			ConcreteVisitor cv = new ConcreteVisitor();
 			cv.visit(shapes[2]);
 			dis.update(new ConcreteContext("NPC colour has been changed."), 0);
 			countdowns[4] = 100;
