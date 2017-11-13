@@ -23,14 +23,7 @@ public class Keyboard_input implements KeyListener{
 //	
 	public void setCommand(String button, Command command){ 
 		
-//		this.command = command; 
 		commands.put(button, command);
-		for (Map.Entry<String, Command> entry : commands.entrySet()) {
-		    String key = entry.getKey();
-//		    Object value = entry.getValue();
-		    System.out.print(key + " IS SET");
-		    // ...
-		}
 	}
 	
 	public void buttonPressed(String button, Character c){

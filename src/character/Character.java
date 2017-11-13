@@ -130,6 +130,11 @@ public abstract class Character {
 
 	}
 
+	public State getState() {
+		return state;
+
+	}
+	
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}

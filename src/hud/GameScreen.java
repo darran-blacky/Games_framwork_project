@@ -63,6 +63,14 @@ public class GameScreen extends Screen {
 			getScreenFactory().createScreen("p");
 			orig.setPlayerX(player.getX());
 			orig.setPlayerY(player.getY());
+
+			ct.addMemento(orig.save());
+			dis.update(new ConcreteContext(), 0);
+			
+		}
+		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F5)) {
+			orig.setPlayerX(player.getX());
+			orig.setPlayerY(player.getY());
 			ct.addMemento(orig.save());
 			dis.update(new ConcreteContext(), 0);
 		}
