@@ -61,11 +61,11 @@
 					assertEquals(Expected_NPC, npc.getName());
 		}
 		
-		@Test
-		public void test_Create_Fail_npc() {
-			//Tests 
-			Character npc = cf.makeCharacter("p" , new Square());
-					System.out.print("Expecting " + npc.getName() + " to be : " + Expected_Fail_NPC);
-					assertEquals(Expected_NPC, npc.getName());
-		}
+//		@Test
+//		public void test_Create_Fail_npc() {
+//			//Tests 
+//			Character npc = cf.makeCharacter("p" , new Square());
+//					System.out.print("Expecting " + npc.getName() + " to be : " + Expected_Fail_NPC);
+//					assertEquals(Expected_NPC, npc.getName());
+//		}
 }

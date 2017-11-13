@@ -22,6 +22,7 @@ public class Game {
 	private final Keyboard_input controller = new Keyboard_input();
 	protected int x, y;
 	
+	
 	  button_A left = new button_A();
 	  button_S down = new button_S();
 	  button_D right = new button_D();
@@ -70,8 +71,7 @@ public class Game {
 	public JFrame getWindow() {
 		return window;
 	}
- 
-	
+ 	
 	
 	//The INVOKER
 	public Keyboard_input getController() {

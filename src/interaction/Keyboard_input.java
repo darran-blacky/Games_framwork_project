@@ -9,10 +9,11 @@ import character.Character;
 public class Keyboard_input implements KeyListener{
 
 //	Command command;
-	Map<String, Command> commands;
+	Map<String, Command> movement_commands;
+	Map<String, Command> screen_commands;
 	
 	public Keyboard_input(){
-		commands = new HashMap<String , Command>();
+		movement_commands = new HashMap<String , Command>();
 	}
 	
 //	public void handleInput(String key , Character c) {
@@ -23,12 +24,12 @@ public class Keyboard_input implements KeyListener{
 //	
 	public void setCommand(String button, Command command){ 
 		
-		commands.put(button, command);
+		movement_commands.put(button, command);
 	}
 	
 	public void buttonPressed(String button, Character c){
 		
-		commands.get(button).execute(c);
+		movement_commands.get(button).execute(c);
 		
 	}
 	

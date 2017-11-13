@@ -18,12 +18,16 @@ public class GameScreen extends Screen {
 	private CharacterFactory character = new CharacterFactory();
 	private Character player;
 	private Character enemy;
-	private Character npc;// ,n9,n8,n7;
+	private Character npc;
 	private Shape[] shapes;
 	private Dispatcher dis;
+<<<<<<< HEAD
 	
 	private int[] countdowns;
 
+=======
+	ConcreteVisitor cv;
+>>>>>>> 6f9e68dfcacff9dce7b837f29a7099951baa1cda
 	private Caretaker ct;
 	private Originator orig;
 
@@ -34,7 +38,11 @@ public class GameScreen extends Screen {
 		dis = new Dispatcher();
 		shapes = new Shape[3];
 		dis.regi(new ConcreteInterceptor(), 0);
+<<<<<<< HEAD
 		countdowns = new int[5];
+=======
+		cv = new ConcreteVisitor();
+>>>>>>> 6f9e68dfcacff9dce7b837f29a7099951baa1cda
 	}
 
 	@Override
@@ -88,21 +96,37 @@ public class GameScreen extends Screen {
 				dis.update(new ConcreteContext("Attempt to Quick Load when no Memento exists."), 0);
 			}
 		}
+<<<<<<< HEAD
 
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F1) && countdowns[2] == 0) {
 			ConcreteVisitor cv = new ConcreteVisitor();
+=======
+		
+		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F1)) {
+			
+>>>>>>> 6f9e68dfcacff9dce7b837f29a7099951baa1cda
 			cv.visit(shapes[0]);
 			dis.update(new ConcreteContext("Player colour has been changed."), 0);
 			countdowns[2] = 100;
 		}
+<<<<<<< HEAD
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F2) && countdowns[3] == 0) {
 			ConcreteVisitor cv = new ConcreteVisitor();
+=======
+		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F2)) {
+			
+>>>>>>> 6f9e68dfcacff9dce7b837f29a7099951baa1cda
 			cv.visit(shapes[1]);
 			dis.update(new ConcreteContext("Enemy colour has been changed."), 0);
 			countdowns[3] = 100;
 		}
+<<<<<<< HEAD
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F3) && countdowns[4] == 0) {
 			ConcreteVisitor cv = new ConcreteVisitor();
+=======
+		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F3)) {
+			
+>>>>>>> 6f9e68dfcacff9dce7b837f29a7099951baa1cda
 			cv.visit(shapes[2]);
 			dis.update(new ConcreteContext("NPC colour has been changed."), 0);
 			countdowns[4] = 100;
