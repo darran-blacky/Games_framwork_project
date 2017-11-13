@@ -3,22 +3,21 @@ package character;
 import java.awt.Color;
 
 public class Shape implements Visitable {
-	
-	
 	protected Color colour;
 
 	private Color[] random;
 	
 	public Shape() {
 		this.colour = Color.GREEN;
-
-
 	}
 
 	public Shape(Color colour) {
 		this.colour = colour;
 	}
 
+	public Color getColor() { return this.colour; }
+	public void setColor(Color newCol) { this.colour = newCol; }
+	
 	public void accept(Visitor visit) {
 
 		random = new Color[7];

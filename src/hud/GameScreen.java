@@ -48,11 +48,11 @@ public class GameScreen extends Screen {
 		player = character.makeCharacter("p", (Square) shapes[0]);
 		enemy = character.makeCharacter("e", (Circle) shapes[1]);
 		npc = character.makeCharacter("n", (Square) shapes[2]);
+		//Set collection to store enough colors for all current characters
+		orig.setColorCollectionSize(3); 
 
 		if (ct.getMemento() != null) {
-			orig.restore(ct.getMemento());
-			player.setX(orig.getPlayerX());
-			player.setY(orig.getPlayerY());
+			readRetrieveMemento();
 		}
 	
 	}
@@ -64,26 +64,16 @@ public class GameScreen extends Screen {
 		npc.update();
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_ESCAPE)) {
 			getScreenFactory().createScreen("p");
-			orig.setPlayerX(player.getX());
-			orig.setPlayerY(player.getY());
-
-			ct.addMemento(orig.save());
-			dis.update(new ConcreteContext("Pause Screen is being accessed."), 0);
-			
+			setCreateMemento("Pause Screen is being accessed.");
 		}
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F5) && countdowns[0] == 0) {
-			orig.setPlayerX(player.getX());
-			orig.setPlayerY(player.getY());
-			ct.addMemento(orig.save());
-			dis.update(new ConcreteContext("Quick Save function just created a Memento."), 0);
+			setCreateMemento("Quick Save function just created a Memento.");
 			countdowns[0] = 200;
 		}
 
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F9) && countdowns[1] == 0) {
 			if (ct.getMemento() != null) {
-				orig.restore(ct.getMemento());
-				player.setX(orig.getPlayerX());
-				player.setY(orig.getPlayerY());
+				readRetrieveMemento();
 				countdowns[1] = 50;
 			} else {
 				dis.update(new ConcreteContext("Attempt to Quick Load when no Memento exists."), 0);
@@ -118,6 +108,25 @@ public class GameScreen extends Screen {
 			countdowns[3]--;
 		if (countdowns[4] > 0)
 			countdowns[4]--;
+	}
+	
+	public void setCreateMemento(String purpose) {
+		orig.setPlayerX(player.getX());
+		orig.setPlayerY(player.getY());
+		orig.setColorAt(shapes[0].getColor(), 0);
+		orig.setColorAt(shapes[1].getColor(), 1);
+		orig.setColorAt(shapes[2].getColor(), 2);
+		ct.addMemento(orig.save());
+		dis.update(new ConcreteContext(purpose), 0);
+	}
+	
+	public void readRetrieveMemento() {
+		orig.restore(ct.getMemento());
+		player.setX(orig.getPlayerX());
+		player.setY(orig.getPlayerY());
+		shapes[0].setColor(orig.getColorAt(0));
+		shapes[1].setColor(orig.getColorAt(1));
+		shapes[2].setColor(orig.getColorAt(2));
 	}
 
 	@Override
