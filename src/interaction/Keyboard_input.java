@@ -20,8 +20,11 @@ public class Keyboard_input implements KeyListener{
 		if(isKeyPressed(KeyEvent.VK_D))  this.buttonPressed("D");
 		if(isKeyPressed(KeyEvent.VK_W))  this.buttonPressed("W");
 		if(isKeyPressed(KeyEvent.VK_S))  this.buttonPressed("S");
-		if(isKeyPressed(KeyEvent.VK_SHIFT) && !isKeyReleased(KeyEvent.VK_SHIFT)) this.buttonPressed("esc");
-		else if(isKeyReleased(KeyEvent.VK_SHIFT)) { this.undoButtonPressed(); }
+		if(isKeyPressed(KeyEvent.VK_SHIFT) && !isKeyReleased(KeyEvent.VK_SHIFT)) {
+			command = movement_commands.get("esc");
+			this.buttonPressed("esc");
+		}
+		else if(!isKeyPressed(KeyEvent.VK_SHIFT)) { this.undoButtonPressed(); }
 		
 //		if(isKeyReleased(KeyEvent.VK_SHIFT)) 
      //movement_commands = new HashMap<String , Command>();
@@ -33,7 +36,9 @@ public class Keyboard_input implements KeyListener{
 	}
 	
 	public void buttonPressed(String button){
-		command = movement_commands.get(button);
+		
+		//command = movement_commands.get(button);
+		
 		movement_commands.get(button).execute();
 	
 	}

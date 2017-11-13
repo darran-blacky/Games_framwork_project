@@ -55,7 +55,11 @@ public abstract class Character {
 			screen.getScreenFactory().getGame().getController().handle_input();
 			checkBorderCollision();
 		}
-		catch(Exception e) {}
+		catch(Exception e) {
+			this.state = default_State;
+			this.state.doAction(this);
+		}
+		
 	}
 
 	public void update() {
