@@ -84,6 +84,7 @@ public class GameScreen extends Screen {
 				orig.restore(ct.getMemento());
 				player.setX(orig.getPlayerX());
 				player.setY(orig.getPlayerY());
+				dis.update(new ConcreteContext("Quick Load is used and state is fethed from last Memento"), 0);
 				countdowns[1] = 50;
 			} else {
 				dis.update(new ConcreteContext("Attempt to Quick Load when no Memento exists."), 0);
