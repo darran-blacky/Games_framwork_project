@@ -26,9 +26,8 @@ public class MainMenu extends Screen {
 	@Override
 	public void onUpdate() {
 		if(getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_N)) {
-			screen = getScreenFactory().createScreen("g");
-			screen.onCreate();
-			screen.onReset();
+			getScreenFactory().createScreen("g").onReset();
+			
 		}
 		if(getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_E)) {
 			System.exit(0);

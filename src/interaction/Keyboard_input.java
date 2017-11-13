@@ -21,7 +21,8 @@ public class Keyboard_input implements KeyListener{
 		if(isKeyPressed(KeyEvent.VK_W))  this.buttonPressed("W");
 		if(isKeyPressed(KeyEvent.VK_S))  this.buttonPressed("S");
 		if(isKeyPressed(KeyEvent.VK_SHIFT) && !isKeyReleased(KeyEvent.VK_SHIFT)) this.buttonPressed("esc");
-		else { this.undoButtonPressed(); }
+		else if(isKeyReleased(KeyEvent.VK_SHIFT)) { this.undoButtonPressed(); }
+		
 //		if(isKeyReleased(KeyEvent.VK_SHIFT)) 
      //movement_commands = new HashMap<String , Command>();
 		

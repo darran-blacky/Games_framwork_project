@@ -51,9 +51,11 @@ public abstract class Character {
 	}
 
 	public void update(Screen screen) {
-		
-		screen.getScreenFactory().getGame().getController().handle_input();
-		checkBorderCollision();
+		try {
+			screen.getScreenFactory().getGame().getController().handle_input();
+			checkBorderCollision();
+		}
+		catch(Exception e) {}
 	}
 
 	public void update() {
