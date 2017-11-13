@@ -87,6 +87,7 @@ public class GameScreen extends Screen {
 				countdowns[1] = 50;
 			} else {
 				dis.update(new ConcreteContext("Attempt to Quick Load when no Memento exists."), 0);
+				countdowns[1] = 75;
 			}
 		}
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_F1) && countdowns[2] == 0) {
