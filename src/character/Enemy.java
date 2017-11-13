@@ -3,7 +3,7 @@ package character;
 import java.awt.Graphics2D;
 
 public class Enemy extends Character{
-	private static final int WIDTH = 10, HEIGHT = 10;
+	private static final int WIDTH = 40, HEIGHT = 40;
 	int x = randomX();
 	int y = randomY();
 	public Enemy(int x, int y, String name, DrawingAPI d_api) {

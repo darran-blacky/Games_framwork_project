@@ -34,12 +34,14 @@ public class Game {
 	public Game(int x, int y, String title) {
 		this.x = x;
 		this.y = y;
+		
 		left = null;
 		down = null ;
 		right = null ;
 		up = null ;
 		sprint = null;
-	
+		
+		
 		   
 		//creating window
 		window.setSize(x,y);
