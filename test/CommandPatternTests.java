@@ -38,17 +38,17 @@ public class CommandPatternTests {
 	
 	
 	//MOVE_LEFT Concrete command
-	MoveLeftCommand left = new MoveLeftCommand();
+	MoveLeftCommand left = new MoveLeftCommand(player);
 	
 	
 	//MOVE_RIGHT Concrete command
-	MoveRightCommand right = new MoveRightCommand();
+	MoveRightCommand right = new MoveRightCommand(player);
 	
 	//MOVE_UP Concrete command
-	MoveUpCommand up = new MoveUpCommand();
+	MoveUpCommand up = new MoveUpCommand(player);
 	
 	//MOVE_DOWN Concrete command
-	MoveDownCommand down = new MoveDownCommand();
+	MoveDownCommand down = new MoveDownCommand(player);
 	
 	
 	int Expected_Left = player.getX() - 2;
@@ -74,7 +74,7 @@ public class CommandPatternTests {
 	@Test
 	public void testNewMoveLeftCommand() {
 		//Tests 
-				controller.buttonPressed("A",player);
+				controller.buttonPressed("A");
 				System.out.print("Expecting " + player.getX() + " to be : " + Expected_Left);
 				assertEquals(Expected_Left, player.getX());
 	}
@@ -83,7 +83,7 @@ public class CommandPatternTests {
 	@Test
 	public void testNewMoveRigthCommand() {
 		//Tests 
-				controller.buttonPressed("D",player);
+				controller.buttonPressed("D");
 				System.out.print("Expecting " + player.getX() + " to be : " + Expected_Right);
 				assertEquals(Expected_Right, player.getX());
 	}
@@ -92,7 +92,7 @@ public class CommandPatternTests {
 	@Test
 	public void testNewMoveUPCommand() {
 		//Tests 
-				controller.buttonPressed("W",player);
+				controller.buttonPressed("W");
 				System.out.print("Expecting " + player.getY() + " to be : " + Expected_UP);
 				assertEquals(Expected_UP, player.getY());
 	}
@@ -101,7 +101,7 @@ public class CommandPatternTests {
 	@Test
 	public void testNewMoveDownCommand() {
 		//Tests 
-		controller.buttonPressed("S",player);
+		controller.buttonPressed("S");
 				System.out.print("Expecting " + player.getY() + " to be : " + Expected_Down);
 				assertEquals(Expected_Down, player.getY());
 	}
