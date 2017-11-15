@@ -24,7 +24,7 @@ public class GameScreen extends Screen {
 	private Dispatcher dis;
 	private int[] countdowns;
 	private ConcreteVisitor cv;
-	
+	private boolean moment = true;
 	private Caretaker ct;
 
 	public GameScreen(ScreenFactory screenFactory) {
@@ -50,7 +50,7 @@ public class GameScreen extends Screen {
 		super.getScreenFactory().getGame().setActivePlayer(player);
 		super.getScreenFactory().getGame().setControllerCommands();
 
-		if (ct.getMemento() != null) {
+		if (ct.getMemento() != null && moment == true) {
 			readRetrieveMemento("Screen is being re-loaded, retrieving saved data.");
 		}
 	
@@ -58,10 +58,6 @@ public class GameScreen extends Screen {
 
 	@Override
 	public void onUpdate() {
-//		player.update(this);
-//		enemy.update();
-//		npc.update();
-		
 		try {
 			this.getScreenFactory().getGame().getController().handle_input();
 			player.checkBorderCollision();
@@ -115,6 +111,7 @@ public class GameScreen extends Screen {
 	}
 	
 	public void setCreateMemento(String purpose) {
+		moment = true;
 		Color[] colors = {shapes[0].getColor(),shapes[1].getColor(),shapes[2].getColor()};
 		ct.addMemento(new Memento(player.getX(), player.getY(), colors));
 		dis.update(new ConcreteContext(purpose), 0);
@@ -149,6 +146,7 @@ public class GameScreen extends Screen {
 	}
 	@Override
 	public void onReset() {
+		moment = false;
 		onCreate();
 		player.setX(400);
 		player.setY(300);

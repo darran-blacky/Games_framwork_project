@@ -3,7 +3,7 @@ package interceptor;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-
+// concreteContext writes the log to log.txt
 public class ConcreteContext implements ContextInterface {
 	public String data;
 	
@@ -32,7 +32,7 @@ public class ConcreteContext implements ContextInterface {
 			System.out.println("ERROR: problem with File writing... (" + e.getMessage() + ")");
 		}
 	}
-
+//get/ set formated string from the interceptor
 	@Override
 	public String getContextString() {
 		return data;

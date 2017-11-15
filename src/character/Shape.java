@@ -6,7 +6,7 @@ public class Shape implements Visitable {
 	protected Color colour;
 
 	private Color[] random;
-	
+	// sets default colour to be green
 	public Shape() {
 		this.colour = Color.GREEN;
 	}
@@ -18,7 +18,7 @@ public class Shape implements Visitable {
 	public Color getColor() { return this.colour; }
 	
 	public void setColor(Color newCol) { this.colour = newCol; }
-	
+	//accepts the visitor to change colour in the shape 
 	public void accept(Visitor visit) {
 
 		random = new Color[7];

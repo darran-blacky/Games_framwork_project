@@ -5,7 +5,7 @@ import java.awt.Color;
 public class Memento {
 	private int playerX, playerY;
 	private Color[] colorCollection;
-	
+	//saves player positional data and colours on screen
 	public Memento(int playerX, int playerY, Color[] cols)
 	{
 		this.playerX = playerX;

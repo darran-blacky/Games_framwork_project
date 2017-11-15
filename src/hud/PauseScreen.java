@@ -7,7 +7,7 @@ import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 
 public class PauseScreen extends Screen {
-	private Screen screen;
+	//private Screen screen;
 	Font f = new Font("arial", Font.BOLD, 28);
 	Font f2 = new Font("arial", Font.BOLD, 16);
 	public Rectangle option = new Rectangle(400-150, 100-60, 300, 64);

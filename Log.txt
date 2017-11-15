@@ -8,3 +8,86 @@
 [LOGGING - 10:13:36]: Quick Load is used and state is fetched from last Memento
 [LOGGING - 10:13:36]: Quick Load is used and state is fetched from last Memento
 [LOGGING - 10:13:37]: Pause Screen is being accessed.
+[LOGGING - 11:31:27]: Quick Save function just created a Memento.
+[LOGGING - 11:38:20]: Pause Screen is being accessed.
+[LOGGING - 11:38:22]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:24]: Pause Screen is being accessed.
+[LOGGING - 11:38:25]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:25]: Pause Screen is being accessed.
+[LOGGING - 11:38:25]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:25]: Pause Screen is being accessed.
+[LOGGING - 11:38:25]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:25]: Pause Screen is being accessed.
+[LOGGING - 11:38:25]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:26]: Pause Screen is being accessed.
+[LOGGING - 11:38:26]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:26]: Pause Screen is being accessed.
+[LOGGING - 11:38:26]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:26]: Pause Screen is being accessed.
+[LOGGING - 11:38:26]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:26]: Pause Screen is being accessed.
+[LOGGING - 11:38:26]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:26]: Pause Screen is being accessed.
+[LOGGING - 11:38:26]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:26]: Pause Screen is being accessed.
+[LOGGING - 11:38:26]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:26]: Pause Screen is being accessed.
+[LOGGING - 11:38:26]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:27]: Pause Screen is being accessed.
+[LOGGING - 11:38:27]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:27]: Pause Screen is being accessed.
+[LOGGING - 11:38:27]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:27]: Pause Screen is being accessed.
+[LOGGING - 11:38:27]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:27]: Pause Screen is being accessed.
+[LOGGING - 11:38:27]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:27]: Pause Screen is being accessed.
+[LOGGING - 11:38:27]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:28]: Pause Screen is being accessed.
+[LOGGING - 11:38:33]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:37]: Pause Screen is being accessed.
+[LOGGING - 11:38:40]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:41]: Pause Screen is being accessed.
+[LOGGING - 11:38:45]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:38:49]: Pause Screen is being accessed.
+[LOGGING - 11:38:57]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:39:22]: Player colour has been changed.
+[LOGGING - 11:39:22]: Enemy colour has been changed.
+[LOGGING - 11:39:22]: NPC colour has been changed.
+[LOGGING - 11:39:23]: Enemy colour has been changed.
+[LOGGING - 11:39:25]: Enemy colour has been changed.
+[LOGGING - 11:39:27]: NPC colour has been changed.
+[LOGGING - 11:39:28]: Player colour has been changed.
+[LOGGING - 11:39:29]: Enemy colour has been changed.
+[LOGGING - 11:40:00]: Quick Save function just created a Memento.
+[LOGGING - 11:40:03]: Player colour has been changed.
+[LOGGING - 11:40:03]: Enemy colour has been changed.
+[LOGGING - 11:40:03]: NPC colour has been changed.
+[LOGGING - 11:40:05]: Player colour has been changed.
+[LOGGING - 11:40:07]: Player colour has been changed.
+[LOGGING - 11:40:08]: Enemy colour has been changed.
+[LOGGING - 11:40:08]: NPC colour has been changed.
+[LOGGING - 11:40:10]: Enemy colour has been changed.
+[LOGGING - 11:40:10]: NPC colour has been changed.
+[LOGGING - 11:40:41]: Quick Load is used and state is fetched from last Memento
+[LOGGING - 11:40:44]: Pause Screen is being accessed.
+[LOGGING - 11:40:47]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:40:53]: Pause Screen is being accessed.
+[LOGGING - 11:40:56]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:41:15]: Player colour has been changed.
+[LOGGING - 11:41:15]: Enemy colour has been changed.
+[LOGGING - 11:41:16]: NPC colour has been changed.
+[LOGGING - 11:41:17]: NPC colour has been changed.
+[LOGGING - 11:41:19]: Player colour has been changed.
+[LOGGING - 11:41:28]: Pause Screen is being accessed.
+[LOGGING - 11:41:32]: Screen is being re-loaded, retrieving saved data.
+[LOGGING - 11:46:23]: Quick Save function just created a Memento.
+[LOGGING - 11:46:32]: Enemy colour has been changed.
+[LOGGING - 11:46:33]: Player colour has been changed.
+[LOGGING - 11:46:35]: NPC colour has been changed.
+[LOGGING - 11:46:40]: Quick Save function just created a Memento.
+[LOGGING - 11:46:42]: Enemy colour has been changed.
+[LOGGING - 11:46:44]: NPC colour has been changed.
+[LOGGING - 11:46:44]: Player colour has been changed.
+[LOGGING - 11:46:45]: Quick Load is used and state is fetched from last Memento
+[LOGGING - 11:46:48]: Pause Screen is being accessed.
