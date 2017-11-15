@@ -16,6 +16,7 @@ public class Shape implements Visitable {
 	}
 
 	public Color getColor() { return this.colour; }
+	
 	public void setColor(Color newCol) { this.colour = newCol; }
 	
 	public void accept(Visitor visit) {

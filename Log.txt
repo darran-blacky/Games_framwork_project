@@ -1,0 +1,10 @@
+[LOGGING - 10:13:30]: Player colour has been changed.
+[LOGGING - 10:13:30]: Enemy colour has been changed.
+[LOGGING - 10:13:31]: NPC colour has been changed.
+[LOGGING - 10:13:32]: Quick Save function just created a Memento.
+[LOGGING - 10:13:34]: Quick Load is used and state is fetched from last Memento
+[LOGGING - 10:13:35]: Quick Load is used and state is fetched from last Memento
+[LOGGING - 10:13:35]: Quick Load is used and state is fetched from last Memento
+[LOGGING - 10:13:36]: Quick Load is used and state is fetched from last Memento
+[LOGGING - 10:13:36]: Quick Load is used and state is fetched from last Memento
+[LOGGING - 10:13:37]: Pause Screen is being accessed.

@@ -21,7 +21,7 @@ public class Square extends Shape implements DrawingAPI {
 		
 		g2d.setColor(this.colour);
 		g2d.fillRect(x, y, WIDTH, HEIGHT);
-	    //System.out.printf("API1.circle at %f:%f radius %f\n", x, y);
+		
 	}
 }
 

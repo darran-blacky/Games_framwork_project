@@ -1,28 +1,16 @@
 package character;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class CharacterFactory {
-	private static CharacterFactory characterFactory;
-	private Map<String, Character> characterPool;
 	
 	public CharacterFactory() {
-		characterPool = new HashMap<String, Character>();
 	}
-	
-	public static CharacterFactory getInstance() {
-		if (characterFactory == null) {
-			characterFactory = new CharacterFactory();
-		}
-		return characterFactory;
-	}
-	
-	
+	/*
+	 * @param entity
+	 * 
+	 */
+	//use makeCharacter method to return an object of type Character
 	public Character makeCharacter(String entity, DrawingAPI d_api) {
 		Character character;	
-			
-			
+		
 			if(entity.equals("p")) {
 			    character = new Player(400,300,"PLAYER" , d_api);
 			}
@@ -36,7 +24,6 @@ public class CharacterFactory {
 			else{
 				character = null;
 			}
-			characterPool.put(entity, character);
 		return character;
 	}
 }

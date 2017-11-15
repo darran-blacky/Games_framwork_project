@@ -8,6 +8,7 @@ import character.Character;
 import character.CharacterFactory;
 import character.Circle;
 import character.ConcreteVisitor;
+import character.Rectangle;
 import character.Shape;
 import character.Square;
 import interceptor.ConcreteContext;
@@ -40,15 +41,14 @@ public class GameScreen extends Screen {
 	public void onCreate() {
 		shapes[0] = new Square();
 		shapes[1] = new Circle(Color.RED);
-		shapes[2] = new Square(Color.BLUE);
+		shapes[2] = new Rectangle(Color.BLUE);
+		
 		player = character.makeCharacter("p", (Square) shapes[0]);
+		enemy  = character.makeCharacter("e", (Circle) shapes[1]);
+		npc    = character.makeCharacter("n", (Rectangle) shapes[2]);
+		
 		super.getScreenFactory().getGame().setActivePlayer(player);
 		super.getScreenFactory().getGame().setControllerCommands();
-		
-
-		enemy = character.makeCharacter("e", (Circle) shapes[1]);
-		npc = character.makeCharacter("n", (Square) shapes[2]);
-
 
 		if (ct.getMemento() != null) {
 			readRetrieveMemento("Screen is being re-loaded, retrieving saved data.");
@@ -58,9 +58,17 @@ public class GameScreen extends Screen {
 
 	@Override
 	public void onUpdate() {
-		player.update(this);
-		enemy.update();
-		npc.update();
+//		player.update(this);
+//		enemy.update();
+//		npc.update();
+		
+		try {
+			this.getScreenFactory().getGame().getController().handle_input();
+			player.checkBorderCollision();
+		}
+		catch(Exception e) {
+		}
+		
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_ESCAPE)) {
 			getScreenFactory().createScreen("p");
 			setCreateMemento("Pause Screen is being accessed.");
@@ -122,10 +130,15 @@ public class GameScreen extends Screen {
 		dis.update(new ConcreteContext(purpose), 0);
 	}
 
+	/*@g2d : reference to the graphics2D library
+	 * The draw() methods to draw each of the characters
+	 * 
+	 */
 	@Override
 	public void onDraw(Graphics2D g2d) {
 		g2d.setColor(Color.BLACK);
 		g2d.fillRect(0, 0, 800, 600);
+		
 		player.draw(g2d);
 		enemy.draw(g2d);
 		npc.draw(g2d);

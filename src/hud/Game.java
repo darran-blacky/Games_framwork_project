@@ -19,7 +19,6 @@ public class Game {
 	private final JFrame window = new JFrame();
 	private final ScreenFactory screenFactory;
 	private final GameThread gameThread;
-//	private final keyboardListener keyListener;
 	private final Keyboard_input controller = new Keyboard_input();
 	protected int x, y;
 	
@@ -35,12 +34,14 @@ public class Game {
 	public Game(int x, int y, String title) {
 		this.x = x;
 		this.y = y;
+		
 		left = null;
 		down = null ;
 		right = null ;
 		up = null ;
 		sprint = null;
-	
+		
+		
 		   
 		//creating window
 		window.setSize(x,y);
@@ -52,7 +53,6 @@ public class Game {
 		screenFactory = new ScreenFactory(this);
 		
 		gameThread = new GameThread(this);
-		//keyListener = new keyboardListener();
 		
 		window.add(gameThread);
 		window.addKeyListener(controller);
