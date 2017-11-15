@@ -25,11 +25,9 @@ public class GameScreen extends Screen {
 	private ConcreteVisitor cv;
 	
 	private Caretaker ct;
-	private Originator orig;
 
 	public GameScreen(ScreenFactory screenFactory) {
 		super(screenFactory);
-		orig = new Originator();
 		ct = new Caretaker();
 		dis = new Dispatcher();
 		shapes = new Shape[3];
@@ -40,24 +38,16 @@ public class GameScreen extends Screen {
 
 	@Override
 	public void onCreate() {
-
-		
 		shapes[0] = new Square();
 		shapes[1] = new Circle(Color.RED);
 		shapes[2] = new Square(Color.BLUE);
 		player = character.makeCharacter("p", (Square) shapes[0]);
-
-		enemy  = character.makeCharacter("e", (Circle) shapes[1]);
-		npc    = character.makeCharacter("n", (Square) shapes[2]);
-		
 		super.getScreenFactory().getGame().setActivePlayer(player);
 		super.getScreenFactory().getGame().setControllerCommands();
 		
 
 		enemy = character.makeCharacter("e", (Circle) shapes[1]);
 		npc = character.makeCharacter("n", (Square) shapes[2]);
-		//Set collection to store enough colors for all current characters
-		orig.setColorCollectionSize(3); 
 
 
 		if (ct.getMemento() != null) {
@@ -117,22 +107,18 @@ public class GameScreen extends Screen {
 	}
 	
 	public void setCreateMemento(String purpose) {
-		orig.setPlayerX(player.getX());
-		orig.setPlayerY(player.getY());
-		orig.setColorAt(shapes[0].getColor(), 0);
-		orig.setColorAt(shapes[1].getColor(), 1);
-		orig.setColorAt(shapes[2].getColor(), 2);
-		ct.addMemento(orig.save());
+		Color[] colors = {shapes[0].getColor(),shapes[1].getColor(),shapes[2].getColor()};
+		ct.addMemento(new Memento(player.getX(), player.getY(), colors));
 		dis.update(new ConcreteContext(purpose), 0);
 	}
 	
 	public void readRetrieveMemento(String purpose) {
-		orig.restore(ct.getMemento());
-		player.setX(orig.getPlayerX());
-		player.setY(orig.getPlayerY());
-		shapes[0].setColor(orig.getColorAt(0));
-		shapes[1].setColor(orig.getColorAt(1));
-		shapes[2].setColor(orig.getColorAt(2));
+		Memento m = ct.getMemento();
+		player.setX(m.getPlayerX());
+		player.setY(m.getPlayerY());
+		shapes[0].setColor(m.getColorAt(0));
+		shapes[1].setColor(m.getColorAt(1));
+		shapes[2].setColor(m.getColorAt(2));
 		dis.update(new ConcreteContext(purpose), 0);
 	}
 
