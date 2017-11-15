@@ -15,5 +15,4 @@ public class NPC extends Character{
 	public void draw(Graphics2D g2d) {
 		 draw_api.drawWorldObject(getX(), getY(), WIDTH, HEIGHT, g2d);
 	}
-	
 }
