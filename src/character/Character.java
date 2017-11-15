@@ -1,23 +1,17 @@
 package character;
 
 import java.awt.Graphics2D;
-import java.awt.event.KeyEvent;
-
-import hud.Screen;
-	
-
+/*
+ * 
+ */
 public abstract class Character {
-	DrawingAPI draw_api;
+	
+	protected DrawingAPI draw_api;
 	protected int x;
 	protected int y;
 	private State state;
 	private State default_State = new WalkingState();
-	protected String name; 
-	private Shape shape;// this is just hard coded temporarily for the move methods below with will interact with command pattern
-
-	//private String name; // this is just hard coded temporarily for the move methods below with will
-							// interact with command pattern
-
+	protected String name; // this is just hard coded temporarily for the move methods below with will interact with command pattern
 	private int speed;
 
 	
@@ -48,21 +42,6 @@ public abstract class Character {
 
 	public void setY(int y) {
 		this.y = y;
-	}
-
-	public void update(Screen screen) {
-		try {
-			screen.getScreenFactory().getGame().getController().handle_input();
-			checkBorderCollision();
-		}
-		catch(Exception e) {
-			this.state = default_State;
-			this.state.doAction(this);
-		}
-		
-	}
-
-	public void update() {
 	}
 
 	// Methods for the character to move

@@ -25,9 +25,7 @@ public class Keyboard_input implements KeyListener{
 			this.buttonPressed("esc");
 		}
 		else if(!isKeyPressed(KeyEvent.VK_SHIFT)) { this.undoButtonPressed(); }
-		
-//		if(isKeyReleased(KeyEvent.VK_SHIFT)) 
-     //movement_commands = new HashMap<String , Command>();
+
 		
 	}
 	public void setCommand(String button, Command command){ 
@@ -36,8 +34,6 @@ public class Keyboard_input implements KeyListener{
 	}
 	
 	public void buttonPressed(String button){
-		
-		//command = movement_commands.get(button);
 		
 		movement_commands.get(button).execute();
 	

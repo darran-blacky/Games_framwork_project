@@ -3,8 +3,11 @@ public class CharacterFactory {
 	
 	public CharacterFactory() {
 	}
-
-	//use makeCharacter method to get object of type Character
+	/*
+	 * @param entity
+	 * 
+	 */
+	//use makeCharacter method to return an object of type Character
 	public Character makeCharacter(String entity, DrawingAPI d_api) {
 		Character character;	
 		

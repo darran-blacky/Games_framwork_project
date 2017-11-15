@@ -65,9 +65,17 @@ public class GameScreen extends Screen {
 
 	@Override
 	public void onUpdate() {
-		player.update(this);
-		enemy.update();
-		npc.update();
+//		player.update(this);
+//		enemy.update();
+//		npc.update();
+		
+		try {
+			this.getScreenFactory().getGame().getController().handle_input();
+			player.checkBorderCollision();
+		}
+		catch(Exception e) {
+		}
+		
 		if (getScreenFactory().getGame().getController().isKeyPressed(KeyEvent.VK_ESCAPE)) {
 			getScreenFactory().createScreen("p");
 			setCreateMemento("Pause Screen is being accessed.");
